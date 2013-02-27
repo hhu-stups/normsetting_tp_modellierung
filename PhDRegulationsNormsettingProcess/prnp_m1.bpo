@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="allPeople" org.eventb.core.type="ℙ(allPeople)"/>
+<org.eventb.core.poIdentifier name="anyPrinciples" org.eventb.core.type="ℙ(anyPrinciples)"/>
+<org.eventb.core.poIdentifier name="councilMembers" org.eventb.core.type="ℙ(councilMembers)"/>
+<org.eventb.core.poIdentifier name="deansOfficeEmployees" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="dekanChairperson" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="deputyFacultyMembers" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="employees" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="igradLeader" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="medicalFacultyMembers" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="otherProfessors" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="otherResearchers" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="p_dekanChairperson" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="phdCoordinators" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="phdStudents" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="professors" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="researchers" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="s_dekanChairperson" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="scientificInstitutionManagers" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="senatMembers" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="startTime" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="students" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="supervisors" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poPredicate name="scientificInstitutionManagert" org.eventb.core.predicate="startTime∈ℕ1∧startTime≥14" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_c1.buc|org.eventb.core.contextFile#prnp_c1|org.eventb.core.axiom#__d52kIDkEeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="scientificInstitutionManageru" org.eventb.core.predicate="partition(allPeople,{dekanChairperson},{p_dekanChairperson},{s_dekanChairperson},{deputyFacultyMembers},{scientificInstitutionManagers},{otherProfessors},{senatMembers},{otherResearchers},{supervisors},{phdStudents},{phdCoordinators},{igradLeader},{medicalFacultyMembers},{deansOfficeEmployees},{professors},{students},{researchers},{employees})" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_c1.buc|org.eventb.core.contextFile#prnp_c1|org.eventb.core.axiom#_sBuAIIDjEeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poIdentifier name="choosenPackage" org.eventb.core.type="ℙ(anyPrinciples)"/>
+<org.eventb.core.poIdentifier name="decided" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="draftAccepted" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="draftCorrectionsMade" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="draftWritten" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="mailsSent" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="packages" org.eventb.core.type="ℙ(anyPrinciples)"/>
+<org.eventb.core.poIdentifier name="participants" org.eventb.core.type="ℙ(allPeople)"/>
+<org.eventb.core.poIdentifier name="principles" org.eventb.core.type="ℙ(anyPrinciples)"/>
+<org.eventb.core.poIdentifier name="principlesVotesAbstention" org.eventb.core.type="ℙ(anyPrinciples×ℤ)"/>
+<org.eventb.core.poIdentifier name="principlesVotesNo" org.eventb.core.type="ℙ(anyPrinciples×ℤ)"/>
+<org.eventb.core.poIdentifier name="principlesVotesYes" org.eventb.core.type="ℙ(anyPrinciples×ℤ)"/>
+<org.eventb.core.poIdentifier name="time" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="inv8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="choosenPackage∈ℙ(packages)⇒finite(choosenPackage)" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_l-AIMID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_l-AIMID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv0/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentioo"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_K2CMcIDlEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_K2CMcIDlEeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#INITIALISATION\/inv0\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentioo"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(anyPrinciples×ℤ))∈anyPrinciples ⇸ ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwID2EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwID2EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentioo"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(anyPrinciples×ℤ))∈anyPrinciples ⇸ ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwYD2EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwYD2EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#INITIALISATION\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentioo"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(anyPrinciples×ℤ))∈anyPrinciples ⇸ ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwoD2EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwoD2EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#INITIALISATION\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentioo"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(anyPrinciples))∈ℙ(∅ ⦂ ℙ(anyPrinciples))" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_JakZYID4EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_JakZYID4EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#INITIALISATION\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentioo"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(anyPrinciples))∈ℙ(∅ ⦂ ℙ(anyPrinciples))∧card(∅ ⦂ ℙ(anyPrinciples))∈0 ‥ 1" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_l-AIMID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_l-AIMID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#INITIALISATION\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/i1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentioo"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(allPeople))≠(∅ ⦂ ℙ(allPeople))⇒FALSE=TRUE" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_PtmmEIDqEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_PtmmEIDqEeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#INITIALISATION\/i1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD13"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprinciplesVotesAbstentioo" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poIdentifier name="decided'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="principlesVotesAbstention'" org.eventb.core.type="ℙ(anyPrinciples×ℤ)"/>
+<org.eventb.core.poIdentifier name="participants'" org.eventb.core.type="ℙ(allPeople)"/>
+<org.eventb.core.poIdentifier name="packages'" org.eventb.core.type="ℙ(anyPrinciples)"/>
+<org.eventb.core.poIdentifier name="mailsSent'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="principlesVotesYes'" org.eventb.core.type="ℙ(anyPrinciples×ℤ)"/>
+<org.eventb.core.poIdentifier name="draftWritten'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="principles'" org.eventb.core.type="ℙ(anyPrinciples)"/>
+<org.eventb.core.poIdentifier name="draftAccepted'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="time'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="draftCorrectionsMade'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="choosenPackage'" org.eventb.core.type="ℙ(anyPrinciples)"/>
+<org.eventb.core.poIdentifier name="principlesVotesNo'" org.eventb.core.type="ℙ(anyPrinciples×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprinciplesVotesAbstentioo" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTIDENTprinciplesVotesAbstentioo" org.eventb.core.poStamp="16"/>
+<org.eventb.core.poSequent name="timeAhead1/inv0/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentiop"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="startTime∈ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_K2CMcIDlEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_yYRnoIDlEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_K2CMcIDlEeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#timeAhead1\/inv0\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprinciplesVotesAbstentiop" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poIdentifier name="time'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprinciplesVotesAbstentiop" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTIDENTprinciplesVotesAbstentiop" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="time&lt;startTime" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_yYRnoIDlEeKdG5BppL3oGw|org.eventb.core.guard#_yYRnoYDlEeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="timeAhead2/inv0/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentioq"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="time+14∈ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_K2CMcIDlEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_yYRno4DlEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_K2CMcIDlEeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#timeAhead2\/inv0\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprinciplesVotesAbstentioq" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poIdentifier name="time'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprinciplesVotesAbstentioq" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTIDENTprinciplesVotesAbstentioq" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="time≥startTime" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_yYRno4DlEeKdG5BppL3oGw|org.eventb.core.guard#_yYRnpIDlEeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="phase1_sendMail/i1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentior"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="participants≠(∅ ⦂ ℙ(allPeople))⇒TRUE=TRUE" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_PtmmEIDqEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_XzvjkIDmEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_PtmmEIDqEeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#phase1_sendMail\/i1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD13"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprinciplesVotesAbstentior" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poIdentifier name="mailsSent'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprinciplesVotesAbstentior" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTIDENTprinciplesVotesAbstentior" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="time≤startTime − 14" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_XzvjkIDmEeKdG5BppL3oGw|org.eventb.core.guard#_XzvjkYDmEeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="phase1_mailResponses/i1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentios"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="newPar≠(∅ ⦂ ℙ(allPeople))⇒mailsSent=TRUE" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_PtmmEIDqEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w6akIDpEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_PtmmEIDqEeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#phase1_mailResponses\/i1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD13"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprinciplesVotesAbstentios" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poIdentifier name="participants'" org.eventb.core.type="ℙ(allPeople)"/>
+<org.eventb.core.poIdentifier name="newPar" org.eventb.core.type="ℙ(allPeople)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprinciplesVotesAbstentios" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTIDENTprinciplesVotesAbstentios" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="mailsSent=TRUE" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w6akIDpEeKdG5BppL3oGw|org.eventb.core.guard#_1w7BoIDpEeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="time&lt;startTime" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w6akIDpEeKdG5BppL3oGw|org.eventb.core.guard#_1w7BoYDpEeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="newPar⊆allPeople" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w6akIDpEeKdG5BppL3oGw|org.eventb.core.guard#_1w7BooDpEeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="phase2_discussion_of_principles/p4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTHYPprinciplesVotesAbstentiot)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(newPrin)" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw|org.eventb.core.guard#_q75G4IDrEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw|org.eventb.core.guard#_q75G4IDrEeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTHYPprinciplesVotesAbstentiot)"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="phase2_discussion_of_principles/p5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTHYPprinciplesVotesAbstentiot*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(participants)" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw|org.eventb.core.guard#_KPGcYIDyEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw|org.eventb.core.guard#_KPGcYIDyEeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTHYPprinciplesVotesAbstentiot*"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="phase2_discussion_of_principles/p6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTHYPprinciplesVotesAbstentiot+"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂anyPrinciples·x∈newPrin⇒x∈dom(newVoteYes)∧newVoteYes∈anyPrinciples ⇸ ℤ∧x∈dom(newVoteNo)∧newVoteNo∈anyPrinciples ⇸ ℤ∧x∈dom(newVoteAbstention)∧newVoteAbstention∈anyPrinciples ⇸ ℤ∧finite(participants)" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw|org.eventb.core.guard#_o-4uAIDzEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw|org.eventb.core.guard#_o-4uAIDzEeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTHYPprinciplesVotesAbstentiot+"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="phase2_discussion_of_principles/inv0/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentiot"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="time∈ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_K2CMcIDlEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_K2CMcIDlEeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#phase2_discussion_of_principles\/inv0\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="phase2_discussion_of_principles/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentiot"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="newVoteYes∈anyPrinciples ⇸ ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwID2EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwID2EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#phase2_discussion_of_principles\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="phase2_discussion_of_principles/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentiot"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="newVoteNo∈anyPrinciples ⇸ ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwYD2EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwYD2EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#phase2_discussion_of_principles\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="phase2_discussion_of_principles/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentiot"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="newVoteAbstention∈anyPrinciples ⇸ ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwoD2EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwoD2EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#phase2_discussion_of_principles\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="phase2_discussion_of_principles/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentiot"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="packages∈ℙ(newPrin)" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_JakZYID4EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_JakZYID4EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#phase2_discussion_of_principles\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprinciplesVotesAbstentiot" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poIdentifier name="principlesVotesAbstention'" org.eventb.core.type="ℙ(anyPrinciples×ℤ)"/>
+<org.eventb.core.poIdentifier name="principlesVotesYes'" org.eventb.core.type="ℙ(anyPrinciples×ℤ)"/>
+<org.eventb.core.poIdentifier name="newPrin" org.eventb.core.type="ℙ(anyPrinciples)"/>
+<org.eventb.core.poIdentifier name="principles'" org.eventb.core.type="ℙ(anyPrinciples)"/>
+<org.eventb.core.poIdentifier name="newVoteAbstention" org.eventb.core.type="ℙ(anyPrinciples×ℤ)"/>
+<org.eventb.core.poIdentifier name="newVoteNo" org.eventb.core.type="ℙ(anyPrinciples×ℤ)"/>
+<org.eventb.core.poIdentifier name="time'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="newVoteYes" org.eventb.core.type="ℙ(anyPrinciples×ℤ)"/>
+<org.eventb.core.poIdentifier name="principlesVotesNo'" org.eventb.core.type="ℙ(anyPrinciples×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPprinciplesVotesAbstentiot)" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTIDENTprinciplesVotesAbstentiot" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="time=startTime" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw|org.eventb.core.guard#_1w7BpYDpEeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="mailsSent=TRUE" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw|org.eventb.core.guard#_1w7osIDpEeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="participants≠(∅ ⦂ ℙ(allPeople))" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw|org.eventb.core.guard#_1w7osYDpEeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPprinciplesVotesAbstentiot*" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTHYPprinciplesVotesAbstentiot)" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="card(newPrin)∈ℕ∧newPrin⊆anyPrinciples" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw|org.eventb.core.guard#_q75G4IDrEeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPprinciplesVotesAbstentiot+" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTHYPprinciplesVotesAbstentiot*" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="newVoteYes∈newPrin → 0 ‥ card(participants)∧newVoteNo∈newPrin → 0 ‥ card(participants)∧newVoteAbstention∈newPrin → 0 ‥ card(participants)" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw|org.eventb.core.guard#_KPGcYIDyEeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprinciplesVotesAbstentiot" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTHYPprinciplesVotesAbstentiot+" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="∀x⦂anyPrinciples·x∈newPrin∧newVoteYes(x)+newVoteNo(x)+newVoteAbstention(x)=card(participants)" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_1w7BpIDpEeKdG5BppL3oGw|org.eventb.core.guard#_o-4uAIDzEeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="phase3_create_packages/p2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTHYPprinciplesVotesAbstentiou'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(principles)" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-B9YID5EeKdG5BppL3oGw|org.eventb.core.guard#_l-B9ZYD5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-B9YID5EeKdG5BppL3oGw|org.eventb.core.guard#_l-B9ZYD5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTHYPprinciplesVotesAbstentiou'"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="phase3_create_packages/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentiou"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="packages∪newPackage∈ℙ(principles)" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_JakZYID4EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-B9YID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_JakZYID4EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#phase3_create_packages\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="phase3_create_packages/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentiou"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="choosenPackage∈ℙ(packages∪newPackage)∧card(choosenPackage)∈0 ‥ 1" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_l-AIMID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-B9YID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_l-AIMID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#phase3_create_packages\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprinciplesVotesAbstentiou" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poIdentifier name="voting" org.eventb.core.type="ℙ(ℙ(anyPrinciples)×BOOL)"/>
+<org.eventb.core.poIdentifier name="consistent" org.eventb.core.type="ℙ(ℙ(anyPrinciples)×BOOL)"/>
+<org.eventb.core.poIdentifier name="newPackage" org.eventb.core.type="ℙ(anyPrinciples)"/>
+<org.eventb.core.poIdentifier name="packages'" org.eventb.core.type="ℙ(anyPrinciples)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPprinciplesVotesAbstentiou'" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTIDENTprinciplesVotesAbstentiou" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="time=startTime+14" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-B9YID5EeKdG5BppL3oGw|org.eventb.core.guard#_l-B9ZID5EeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprinciplesVotesAbstentiou" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTHYPprinciplesVotesAbstentiou'" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="card(principles)&gt;0" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-B9YID5EeKdG5BppL3oGw|org.eventb.core.guard#_l-B9ZYD5EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="newPackage⊆principles" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-B9YID5EeKdG5BppL3oGw|org.eventb.core.guard#_l-CkcID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="consistent={newPackage ↦ TRUE}" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-B9YID5EeKdG5BppL3oGw|org.eventb.core.guard#_l-CkcYD5EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="voting={newPackage ↦ TRUE}" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-B9YID5EeKdG5BppL3oGw|org.eventb.core.guard#_l-CkcoD5EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="choosenPackage=(∅ ⦂ ℙ(anyPrinciples))" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-B9YID5EeKdG5BppL3oGw|org.eventb.core.guard#_rE8z4ID5EeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="phase3_choose_package/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTALLHYPprinciplesVotesAbstentiov"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{choosenPack}∈ℙ(packages)∧card({choosenPack})∈0 ‥ 1" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_l-AIMID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-CkdID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_l-AIMID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poSequent#phase3_choose_package\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprinciplesVotesAbstentiov" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poIdentifier name="choosenPack" org.eventb.core.type="anyPrinciples"/>
+<org.eventb.core.poIdentifier name="choosenPackage'" org.eventb.core.type="ℙ(anyPrinciples)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprinciplesVotesAbstentiov" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTIDENTprinciplesVotesAbstentiov" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="time=startTime+14" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-CkdID5EeKdG5BppL3oGw|org.eventb.core.guard#_l-CkdoD5EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="packages≠(∅ ⦂ ℙ(anyPrinciples))" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-CkdID5EeKdG5BppL3oGw|org.eventb.core.guard#_l-Ckd4D5EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="choosenPack∈packages" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_l-CkdID5EeKdG5BppL3oGw|org.eventb.core.guard#_l-CkeID5EeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTprinciplesVotesAbstentiow" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poIdentifier name="draftWritten'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprinciplesVotesAbstentiow" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTIDENTprinciplesVotesAbstentiow" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="time=startTime+14+14" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_K64qsID6EeKdG5BppL3oGw|org.eventb.core.guard#_K64qsYD6EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="packages≠(∅ ⦂ ℙ(anyPrinciples))" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_K64qsID6EeKdG5BppL3oGw|org.eventb.core.guard#_K64qsoD6EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="choosenPackage≠(∅ ⦂ ℙ(anyPrinciples))" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_K64qsID6EeKdG5BppL3oGw|org.eventb.core.guard#_K64qs4D6EeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTprinciplesVotesAbstentiox" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poIdentifier name="corrected" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="draftCorrectionsMade'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprinciplesVotesAbstentiox" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTIDENTprinciplesVotesAbstentiox" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="time=startTime+14+14+28" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_biEfYID6EeKdG5BppL3oGw|org.eventb.core.guard#_biEfYoD6EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="draftWritten=TRUE" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_biEfYID6EeKdG5BppL3oGw|org.eventb.core.guard#_biEfY4D6EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="corrected∈BOOL" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_biEfYID6EeKdG5BppL3oGw|org.eventb.core.guard#_biEfZID6EeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTprinciplesVotesAbstentioy" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="decided'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="newDraftAccepted" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="draftAccepted'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprinciplesVotesAbstentioy" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#EVTIDENTprinciplesVotesAbstentioy" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="time=startTime+14+14+28+14" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_F3ZGMID7EeKdG5BppL3oGw|org.eventb.core.guard#_F3ZGMoD7EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="draftWritten=TRUE" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_F3ZGMID7EeKdG5BppL3oGw|org.eventb.core.guard#_F3ZGM4D7EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="newDraftAccepted∈BOOL" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_F3ZGMID7EeKdG5BppL3oGw|org.eventb.core.guard#_F3ZGNID7EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="decided=FALSE" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.event#_F3ZGMID7EeKdG5BppL3oGw|org.eventb.core.guard#_F3ZGNYD7EeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPprnp_c9" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="time∈ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_K2CMcIDlEeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="mailsSent∈BOOL" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_XzuVcoDmEeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="participants⊆allPeople" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_1w5McoDpEeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="principles⊆anyPrinciples" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_6bIRgYDqEeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="principlesVotesYes∈anyPrinciples ⇸ ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwID2EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="principlesVotesNo∈anyPrinciples ⇸ ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwYD2EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="principlesVotesAbstention∈anyPrinciples ⇸ ℕ" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_HPodwoD2EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="packages∈ℙ(principles)" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_JakZYID4EeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_m1.bpo|org.eventb.core.poFile#prnp_m1|org.eventb.core.poPredicateSet#HYPprnp_c9" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="choosenPackage∈ℙ(packages)∧card(choosenPackage)∈0 ‥ 1" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_l-AIMID5EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="draftWritten∈BOOL" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_IBRZQID6EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="draftCorrectionsMade∈BOOL" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_biCDIID6EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="decided∈BOOL" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_F3WC4ID7EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="draftAccepted∈BOOL" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_F3WC4YD7EeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="participants≠(∅ ⦂ ℙ(allPeople))⇒mailsSent=TRUE" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_m1.bum|org.eventb.core.machineFile#prnp_m1|org.eventb.core.invariant#_PtmmEIDqEeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

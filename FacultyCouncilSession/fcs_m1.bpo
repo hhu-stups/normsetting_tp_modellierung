@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="councilMembers" org.eventb.core.type="ℙ(councilMembers)"/>
+<org.eventb.core.poIdentifier name="employees" org.eventb.core.type="ℙ(employees)"/>
+<org.eventb.core.poIdentifier name="nonvotingCouncilMembers" org.eventb.core.type="ℙ(nonvotingCouncilMembers)"/>
+<org.eventb.core.poIdentifier name="professors" org.eventb.core.type="ℙ(professors)"/>
+<org.eventb.core.poIdentifier name="replacementMembers" org.eventb.core.type="ℙ(replacementMembers)"/>
+<org.eventb.core.poIdentifier name="researchers" org.eventb.core.type="ℙ(researchers)"/>
+<org.eventb.core.poIdentifier name="students" org.eventb.core.type="ℙ(students)"/>
+<org.eventb.core.poIdentifier name="votingCouncilMembers" org.eventb.core.type="ℙ(votingCouncilMembers)"/>
+<org.eventb.core.poIdentifier name="E1" org.eventb.core.type="employees"/>
+<org.eventb.core.poIdentifier name="E2" org.eventb.core.type="employees"/>
+<org.eventb.core.poIdentifier name="RE1" org.eventb.core.type="researchers"/>
+<org.eventb.core.poIdentifier name="RE2" org.eventb.core.type="researchers"/>
+<org.eventb.core.poIdentifier name="S1" org.eventb.core.type="students"/>
+<org.eventb.core.poIdentifier name="S2" org.eventb.core.type="students"/>
+<org.eventb.core.poIdentifier name="S3" org.eventb.core.type="students"/>
+<org.eventb.core.poIdentifier name="T1" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T2" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T3" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T4" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T5" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T6" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T7" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T8" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="dekanChairperson" org.eventb.core.type="nonvotingCouncilMembers"/>
+<org.eventb.core.poIdentifier name="initialAgenda" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="p_dekanChairperson" org.eventb.core.type="nonvotingCouncilMembers"/>
+<org.eventb.core.poPredicate name="nonvotingCouncilMembert" org.eventb.core.predicate="partition(nonvotingCouncilMembers,{dekanChairperson},{p_dekanChairperson})" org.eventb.core.source="/FacultyCouncilSession/fcs_c1.buc|org.eventb.core.contextFile#fcs_c1|org.eventb.core.axiom#_QVtpEBkaEeKLjPbx6ei19w"/>
+<org.eventb.core.poPredicate name="nonvotingCouncilMemberu" org.eventb.core.predicate="partition(professors,{T1},{T2},{T3},{T4},{T5},{T6},{T7},{T8})" org.eventb.core.source="/FacultyCouncilSession/fcs_c1.buc|org.eventb.core.contextFile#fcs_c1|org.eventb.core.axiom#_PNT_kCTsEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="nonvotingCouncilMemberv" org.eventb.core.predicate="partition(students,{S1},{S2},{S3})" org.eventb.core.source="/FacultyCouncilSession/fcs_c1.buc|org.eventb.core.contextFile#fcs_c1|org.eventb.core.axiom#_PNUmoCTsEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="nonvotingCouncilMemberw" org.eventb.core.predicate="partition(researchers,{RE1},{RE2})" org.eventb.core.source="/FacultyCouncilSession/fcs_c1.buc|org.eventb.core.contextFile#fcs_c1|org.eventb.core.axiom#_PNV0wCTsEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="nonvotingCouncilMemberx" org.eventb.core.predicate="partition(employees,{E1},{E2})" org.eventb.core.source="/FacultyCouncilSession/fcs_c1.buc|org.eventb.core.contextFile#fcs_c1|org.eventb.core.axiom#_PNXC4CTsEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="nonvotingCouncilMembery" org.eventb.core.predicate="initialAgenda∈ℕ1" org.eventb.core.source="/FacultyCouncilSession/fcs_c1.buc|org.eventb.core.contextFile#fcs_c1|org.eventb.core.axiom#_Z0zJYCTxEeKSjJuHpGd9gQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="agenda" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="break" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="closed" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="comissionMembers" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="completed" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="councilCanDecide" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="dekanPresent" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="guests" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="initialCheck" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="otherGuests" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="postponed" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="presentVotingMembers" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="scientificInstitutionManagers" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="votingResults" org.eventb.core.type="ℙ(ℤ×BOOL)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="inv12/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(nonvotingCouncilMembers)∧(card(nonvotingCouncilMembers)=2∨finite(nonvotingCouncilMembers))" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_sBm90BkZEeKLjPbx6ei19w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_sBm90BkZEeKLjPbx6ei19w"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ABSHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inv20/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c2"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(professors)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ZTV9UBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ZTV9UBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inv30/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c3"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(students)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_brA_UBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_brA_UBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inv40/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c4"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(researchers)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_nCOIIBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_nCOIIBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inv50/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c5"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(employees)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_wf_qIBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_wf_qIBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inv80/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(professors)∧finite(students)∧finite(researchers)∧finite(employees)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ATyKoBknEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ATyKoBknEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="card(nonvotingCouncilMembers)=2∨card(nonvotingCouncilMembers)=3" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_sBm90BkZEeKLjPbx6ei19w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_sBm90BkZEeKLjPbx6ei19w"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c2|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv20/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="card(professors)=8" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ZTV9UBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ZTV9UBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/inv20\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c3|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv30/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="card(students)=3" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_brA_UBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_brA_UBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/inv30\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c4|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv40/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="card(researchers)=2" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_nCOIIBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_nCOIIBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/inv40\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c5|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv50/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="card(employees)=2" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_wf_qIBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_wf_qIBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/inv50\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/iiii1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_f-4uoBkgEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_f-4uoBkgEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/iiii1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/iiii2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_f-5VsBkgEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_f-5VsBkgEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/iiii2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/iiii3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_f-5VsRkgEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_f-5VsRkgEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/iiii3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/iiii4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_qBnX0BkgEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_qBnX0BkgEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/iiii4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv60/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0=0+0+0" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_Q_xLUBkdEeKLjPbx6ei19w"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_Q_xLUBkdEeKLjPbx6ei19w"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/inv60\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD9"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv70/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="initialAgenda∈ℕ" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_P1bJABkmEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_P1bJABkmEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/inv70\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD10"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv71/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ℤ))∈ℙ(ℕ1)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_gAwKwCTwEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_gAwKwCTwEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/inv71\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD11"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv72/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ℤ))∈ℙ(ℕ1)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-RcCT0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-RcCT0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/inv72\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD12"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv73/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ℤ))∩(∅ ⦂ ℙ(ℤ))=(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-RcST0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-RcST0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/inv73\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD13"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv76/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ℤ×BOOL))∈ℕ ⇸ BOOL" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_C8vF8GuREeKUtN9mm1qwOQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_C8vF8GuREeKUtN9mm1qwOQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/inv76\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD15"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv80/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="15∈0 ‥ card(professors)+card(students)+card(researchers)+card(employees)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ATyKoBknEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ATyKoBknEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#INITIALISATION\/inv80\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTscientificInstitutionManagert" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="presentVotingMembers'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="councilCanDecide'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="initialCheck'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="postponed'" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="guests'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="dekanPresent'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="agenda'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="otherGuests'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="scientificInstitutionManagers'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="comissionMembers'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="votingResults'" org.eventb.core.type="ℙ(ℤ×BOOL)"/>
+<org.eventb.core.poIdentifier name="closed'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="break'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="completed'" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPscientificInstitutionManagert" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTIDENTscientificInstitutionManagert" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="newAgendaItem/inv70/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManageru"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="agenda+1∈ℕ" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_P1bJABkmEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_E0-ocRkoEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_P1bJABkmEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#newAgendaItem\/inv70\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD10"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTscientificInstitutionManageru" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="resultNo" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="resultYes" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="agenda'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="resAbstention" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPscientificInstitutionManageru" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTIDENTscientificInstitutionManageru" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="closed=FALSE∧councilCanDecide=TRUE" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_E0-ocRkoEeKbedzoGdeyVQ|org.eventb.core.guard#_o3il0BkqEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="resultYes∈0 ‥ presentVotingMembers" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_E0-ocRkoEeKbedzoGdeyVQ|org.eventb.core.guard#_E0_2khkoEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="resultNo∈0 ‥ presentVotingMembers" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_E0-ocRkoEeKbedzoGdeyVQ|org.eventb.core.guard#_ix-AoBkoEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="resAbstention∈0 ‥ presentVotingMembers" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_E0-ocRkoEeKbedzoGdeyVQ|org.eventb.core.guard#_E1AdoRkoEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="resultYes+resultNo+resAbstention=presentVotingMembers" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_E0-ocRkoEeKbedzoGdeyVQ|org.eventb.core.guard#_E1BEsBkoEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="resultYes&gt;resultNo" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_E0-ocRkoEeKbedzoGdeyVQ|org.eventb.core.guard#_3gDJ8CT0EeKSjJuHpGd9gQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="checkDecisionPossible/inv2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTHYPscientificInstitutionManagerv("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(professors)∧finite(students)∧finite(researchers)∧finite(employees)∧2≠0" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_Hp8_kBkqEeKbedzoGdeyVQ|org.eventb.core.guard#_bGqP4BkqEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_Hp8_kBkqEeKbedzoGdeyVQ|org.eventb.core.guard#_bGqP4BkqEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTHYPscientificInstitutionManagerv("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTscientificInstitutionManagerv" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="res" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="councilCanDecide'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="initialCheck'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPscientificInstitutionManagerv(" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTIDENTscientificInstitutionManagerv" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="closed=FALSE" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_Hp8_kBkqEeKbedzoGdeyVQ|org.eventb.core.guard#_3gDxACT0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="res∈BOOL" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_Hp8_kBkqEeKbedzoGdeyVQ|org.eventb.core.guard#_Hp9moRkqEeKbedzoGdeyVQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPscientificInstitutionManagerv" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTHYPscientificInstitutionManagerv(" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="presentVotingMembers&gt;(card(professors)+card(students)+card(researchers)+card(employees)) ÷ 2⇔res=TRUE" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_Hp8_kBkqEeKbedzoGdeyVQ|org.eventb.core.guard#_bGqP4BkqEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="break=TRUE∨initialCheck=TRUE∨dekanPresent=TRUE" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_Hp8_kBkqEeKbedzoGdeyVQ|org.eventb.core.guard#_bDoUkBkrEeKbedzoGdeyVQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="memberEnter/inv1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTIDENTscientificInstitutionManagerw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(professors)∧finite(students)∧finite(researchers)∧finite(employees)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_4hBiwGuVEeKUtN9mm1qwOQ|org.eventb.core.guard#_4hCJ0GuVEeKUtN9mm1qwOQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_4hBiwGuVEeKUtN9mm1qwOQ|org.eventb.core.guard#_4hCJ0GuVEeKUtN9mm1qwOQ"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTIDENTscientificInstitutionManagerw"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="memberEnter/inv80/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagerw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="presentVotingMembers+1∈0 ‥ card(professors)+card(students)+card(researchers)+card(employees)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ATyKoBknEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_4hBiwGuVEeKUtN9mm1qwOQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ATyKoBknEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#memberEnter\/inv80\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTscientificInstitutionManagerw" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="presentVotingMembers'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPscientificInstitutionManagerw" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTIDENTscientificInstitutionManagerw" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="presentVotingMembers&lt;card(professors)+card(students)+card(researchers)+card(employees)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_4hBiwGuVEeKUtN9mm1qwOQ|org.eventb.core.guard#_4hCJ0GuVEeKUtN9mm1qwOQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="memberLeaves/inv80/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManagerx"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="presentVotingMembers − 1∈0 ‥ card(professors)+card(students)+card(researchers)+card(employees)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ATyKoBknEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_4hCJ0muVEeKUtN9mm1qwOQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ATyKoBknEeKbedzoGdeyVQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#memberLeaves\/inv80\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTscientificInstitutionManagerx" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="presentVotingMembers'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPscientificInstitutionManagerx" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTIDENTscientificInstitutionManagerx" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="presentVotingMembers&gt;0" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_4hCJ0muVEeKUtN9mm1qwOQ|org.eventb.core.guard#_4hCJ02uVEeKUtN9mm1qwOQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTscientificInstitutionManagery" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="dekanPresent'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPscientificInstitutionManagery" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTIDENTscientificInstitutionManagery" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="dekanPresent=FALSE" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_32O_oGxhEeK28L3axe50Pg|org.eventb.core.guard#_32QNwGxhEeK28L3axe50Pg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTscientificInstitutionManagerz" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="dekanPresent'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPscientificInstitutionManagerz" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTIDENTscientificInstitutionManagerz" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="dekanPresent=TRUE" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_32QNwmxhEeK28L3axe50Pg|org.eventb.core.guard#_32Q00GxhEeK28L3axe50Pg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="postponedAgendaitem/inv71/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManager{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="postponed∪{item}∈ℙ(ℕ1)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_gAwKwCTwEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_ojzfACTyEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_gAwKwCTwEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#postponedAgendaitem\/inv71\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD11"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="postponedAgendaitem/inv73/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManager{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(postponed∪{item})∩completed=(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-RcST0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_ojzfACTyEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-RcST0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#postponedAgendaitem\/inv73\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD13"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTscientificInstitutionManager{" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="item" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="postponed'" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPscientificInstitutionManager{" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTIDENTscientificInstitutionManager{" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="closed=FALSE∧councilCanDecide=TRUE" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_ojzfACTyEeKSjJuHpGd9gQ|org.eventb.core.guard#_3gE_ICT0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="item∈1 ‥ agenda" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_ojzfACTyEeKSjJuHpGd9gQ|org.eventb.core.guard#_oj0GECTyEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="dekanPresent=TRUE" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_ojzfACTyEeKSjJuHpGd9gQ|org.eventb.core.guard#_oj0GESTyEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="item∉completed∧item∉postponed" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_ojzfACTyEeKSjJuHpGd9gQ|org.eventb.core.guard#_3gFmMCT0EeKSjJuHpGd9gQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="completeAgendaitem/grd1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTHYPscientificInstitutionManager\|'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(completed∪postponed)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ|org.eventb.core.guard#_3gGNQiT0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ|org.eventb.core.guard#_3gGNQiT0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTHYPscientificInstitutionManager\|'"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="completeAgendaitem/inv72/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManager\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="completed∪{item}∈ℙ(ℕ1)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-RcCT0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-RcCT0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#completeAgendaitem\/inv72\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD12"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="completeAgendaitem/inv73/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManager\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="postponed∩(completed∪{item})=(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-RcST0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-RcST0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#completeAgendaitem\/inv73\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD13"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="completeAgendaitem/inv76/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTALLHYPscientificInstitutionManager\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="votingResults∪{item ↦ res}∈ℕ ⇸ BOOL" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_C8vF8GuREeKUtN9mm1qwOQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_C8vF8GuREeKUtN9mm1qwOQ"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poSequent#completeAgendaitem\/inv76\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB|org.eventb.core.poPredicate#PRD15"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTscientificInstitutionManager|" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="res" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="resultNo" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="item" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="resultYes" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="votingResults'" org.eventb.core.type="ℙ(ℤ×BOOL)"/>
+<org.eventb.core.poIdentifier name="resAbstention" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="completed'" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPscientificInstitutionManager|'" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTIDENTscientificInstitutionManager\|" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="closed=FALSE∧councilCanDecide=TRUE" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ|org.eventb.core.guard#_3gGNQST0EeKSjJuHpGd9gQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPscientificInstitutionManager|" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTHYPscientificInstitutionManager\|'" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="item=card(completed∪postponed)+1∧item≤agenda" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ|org.eventb.core.guard#_3gGNQiT0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="dekanPresent=TRUE" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ|org.eventb.core.guard#_3gG0UCT0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="item∉postponed∧item∉completed" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ|org.eventb.core.guard#_3gG0UST0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="resultYes∈0 ‥ presentVotingMembers" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ|org.eventb.core.guard#_Yu7pIGugEeKm15SvwC8AFg"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="resultNo∈0 ‥ presentVotingMembers" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ|org.eventb.core.guard#_Yu7pIWugEeKm15SvwC8AFg"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="resAbstention∈0 ‥ presentVotingMembers" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ|org.eventb.core.guard#_Yu8QMGugEeKm15SvwC8AFg"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="resultYes+resultNo+resAbstention=presentVotingMembers" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ|org.eventb.core.guard#_Yu8QMWugEeKm15SvwC8AFg"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="res=TRUE⇔resultYes&gt;resultNo" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_3gFmMST0EeKSjJuHpGd9gQ|org.eventb.core.guard#_kHTPkGugEeKm15SvwC8AFg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="closeSession/grd/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTHYPscientificInstitutionManager}'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(completed)∧finite(postponed)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_Sc36YGuOEeKUtN9mm1qwOQ|org.eventb.core.guard#_Sc5IgWuOEeKUtN9mm1qwOQ"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_Sc36YGuOEeKUtN9mm1qwOQ|org.eventb.core.guard#_Sc5IgWuOEeKUtN9mm1qwOQ"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTHYPscientificInstitutionManager}'"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTscientificInstitutionManager}" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="closed'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPscientificInstitutionManager}'" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTIDENTscientificInstitutionManager}" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="closed=FALSE" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_Sc36YGuOEeKUtN9mm1qwOQ|org.eventb.core.guard#_Sc5IgGuOEeKUtN9mm1qwOQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPscientificInstitutionManager}" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#EVTHYPscientificInstitutionManager}'" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="card(completed)+card(postponed)=agenda∨(councilCanDecide=FALSE∧initialCheck=FALSE)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.event#_Sc36YGuOEeKUtN9mm1qwOQ|org.eventb.core.guard#_Sc5IgWuOEeKUtN9mm1qwOQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPfcs_c2" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="card(nonvotingCouncilMembers)=2∨card(nonvotingCouncilMembers)=3" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_sBm90BkZEeKLjPbx6ei19w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPfcs_c3" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c2" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="card(professors)=8" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ZTV9UBkYEeKLjPbx6ei19w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPfcs_c4" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c3" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="card(students)=3" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_brA_UBkYEeKLjPbx6ei19w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPfcs_c5" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c4" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="card(researchers)=2" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_nCOIIBkYEeKLjPbx6ei19w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPfcs_cB" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_c5" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="card(employees)=2" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_wf_qIBkYEeKLjPbx6ei19w"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="comissionMembers∈ℕ" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_f-4uoBkgEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="scientificInstitutionManagers∈ℕ" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_f-5VsBkgEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="otherGuests∈ℕ" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_f-5VsRkgEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="guests∈ℕ" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_qBnX0BkgEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="guests=scientificInstitutionManagers+comissionMembers+otherGuests" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_Q_xLUBkdEeKLjPbx6ei19w"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="agenda∈ℕ" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_P1bJABkmEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="postponed∈ℙ(ℕ1)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_gAwKwCTwEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="completed∈ℙ(ℕ1)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-RcCT0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="postponed∩completed=(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-RcST0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="closed∈BOOL" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_3f-4gCT0EeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="votingResults∈ℕ ⇸ BOOL" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_C8vF8GuREeKUtN9mm1qwOQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_m1.bpo|org.eventb.core.poFile#fcs_m1|org.eventb.core.poPredicateSet#HYPfcs_cB" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="presentVotingMembers∈0 ‥ card(professors)+card(students)+card(researchers)+card(employees)" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_ATyKoBknEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="councilCanDecide∈BOOL" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_Hp58QBkqEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD18" org.eventb.core.predicate="break∈BOOL" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_v6AGgBkrEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD19" org.eventb.core.predicate="initialCheck∈BOOL" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_v6AGgRkrEeKbedzoGdeyVQ"/>
+<org.eventb.core.poPredicate name="PRD20" org.eventb.core.predicate="dekanPresent∈BOOL" org.eventb.core.source="/FacultyCouncilSession/fcs_m1.bum|org.eventb.core.machineFile#fcs_m1|org.eventb.core.invariant#_CibaMBksEeKbedzoGdeyVQ"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

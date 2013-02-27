@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="councilMembers" org.eventb.core.type="ℙ(councilMembers)"/>
+<org.eventb.core.poIdentifier name="employees" org.eventb.core.type="ℙ(employees)"/>
+<org.eventb.core.poIdentifier name="nonvotingCouncilMembers" org.eventb.core.type="ℙ(nonvotingCouncilMembers)"/>
+<org.eventb.core.poIdentifier name="professors" org.eventb.core.type="ℙ(professors)"/>
+<org.eventb.core.poIdentifier name="replacementMembers" org.eventb.core.type="ℙ(replacementMembers)"/>
+<org.eventb.core.poIdentifier name="researchers" org.eventb.core.type="ℙ(researchers)"/>
+<org.eventb.core.poIdentifier name="students" org.eventb.core.type="ℙ(students)"/>
+<org.eventb.core.poIdentifier name="votingCouncilMembers" org.eventb.core.type="ℙ(votingCouncilMembers)"/>
+<org.eventb.core.poIdentifier name="E1" org.eventb.core.type="employees"/>
+<org.eventb.core.poIdentifier name="E2" org.eventb.core.type="employees"/>
+<org.eventb.core.poIdentifier name="RE1" org.eventb.core.type="researchers"/>
+<org.eventb.core.poIdentifier name="RE2" org.eventb.core.type="researchers"/>
+<org.eventb.core.poIdentifier name="S1" org.eventb.core.type="students"/>
+<org.eventb.core.poIdentifier name="S2" org.eventb.core.type="students"/>
+<org.eventb.core.poIdentifier name="S3" org.eventb.core.type="students"/>
+<org.eventb.core.poIdentifier name="T1" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T2" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T3" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T4" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T5" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T6" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T7" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="T8" org.eventb.core.type="professors"/>
+<org.eventb.core.poIdentifier name="dekanChairperson" org.eventb.core.type="nonvotingCouncilMembers"/>
+<org.eventb.core.poIdentifier name="initialAgenda" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="p_dekanChairperson" org.eventb.core.type="nonvotingCouncilMembers"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/FacultyCouncilSession/fcs_c1.bpo|org.eventb.core.poFile#fcs_c1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(nonvotingCouncilMembers,{dekanChairperson},{p_dekanChairperson})" org.eventb.core.source="/FacultyCouncilSession/fcs_c1.buc|org.eventb.core.contextFile#fcs_c1|org.eventb.core.axiom#_QVtpEBkaEeKLjPbx6ei19w"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(professors,{T1},{T2},{T3},{T4},{T5},{T6},{T7},{T8})" org.eventb.core.source="/FacultyCouncilSession/fcs_c1.buc|org.eventb.core.contextFile#fcs_c1|org.eventb.core.axiom#_PNT_kCTsEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(students,{S1},{S2},{S3})" org.eventb.core.source="/FacultyCouncilSession/fcs_c1.buc|org.eventb.core.contextFile#fcs_c1|org.eventb.core.axiom#_PNUmoCTsEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="partition(researchers,{RE1},{RE2})" org.eventb.core.source="/FacultyCouncilSession/fcs_c1.buc|org.eventb.core.contextFile#fcs_c1|org.eventb.core.axiom#_PNV0wCTsEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="partition(employees,{E1},{E2})" org.eventb.core.source="/FacultyCouncilSession/fcs_c1.buc|org.eventb.core.contextFile#fcs_c1|org.eventb.core.axiom#_PNXC4CTsEeKSjJuHpGd9gQ"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="initialAgenda∈ℕ1" org.eventb.core.source="/FacultyCouncilSession/fcs_c1.buc|org.eventb.core.contextFile#fcs_c1|org.eventb.core.axiom#_Z0zJYCTxEeKSjJuHpGd9gQ"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

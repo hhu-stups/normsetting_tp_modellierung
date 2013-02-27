@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1361982668911" org.eventb.texttools.text_representation="machine prnp_m1&#10; sees prnp_c1&#10;&#10;variables&#10;  time&#10;  mailsSent&#10;  participants&#10;  principles&#10;  principlesVotesYes&#10;  principlesVotesNo&#10;  principlesVotesAbstention&#10;  packages&#10;  choosenPackage&#10;  draftWritten&#10;  draftCorrectionsMade&#10;  decided&#10;  draftAccepted&#10;&#10;&#10;invariants&#10;  @inv0  time ∈ ℕ&#10;  @inv1  mailsSent ∈ BOOL&#10;  @inv2  participants ⊆ allPeople&#10;  @inv3  principles ⊆ anyPrinciples&#10;  @inv4 principlesVotesYes ∈ anyPrinciples ⇸ ℕ //save results of phase 2&#10;  @inv5 principlesVotesNo  ∈ anyPrinciples ⇸ ℕ&#10;  @inv6 principlesVotesAbstention ∈ anyPrinciples ⇸ ℕ&#10;  @inv7 packages ∈ ℙ(principles)&#10;  @inv8 choosenPackage ∈ ℙ(packages) ∧ card(choosenPackage)∈0‥1&#10;  @inv9 draftWritten ∈ BOOL&#10;  @inv10 draftCorrectionsMade ∈ BOOL&#10;  @inv11 decided ∈ BOOL&#10;  @inv12 draftAccepted ∈ BOOL&#10;&#10;  @i1 (participants ≠ ∅) ⇒ (mailsSent = TRUE)&#10;&#10;&#10;events&#10;  event INITIALISATION&#10;  then&#10;     @act0 time ≔ 0&#10;     @act1 mailsSent ≔ FALSE&#10;     @act2 participants ≔  ∅&#10;     @act3 principles ≔  ∅&#10;     @act4 principlesVotesYes ≔ ∅&#10;     @act5 principlesVotesNo ≔ ∅&#10;     @act6 principlesVotesAbstention ≔ ∅&#10;     @inv7 packages ≔ ∅&#10;     @inv8 choosenPackage ≔  ∅  //eigentlich sollte choosenPackage erst am Ende von Phase 3 eingefuehrt werden&#10;     @inv9 draftWritten ≔ FALSE&#10;     @inv10 draftCorrectionsMade ≔ FALSE&#10;     @inv11 decided ≔ FALSE&#10;     @inv12 draftAccepted ≔ FALSE&#10;&#10;  end&#10;&#10;&#10;  event timeAhead1&#10;  where&#10;    @p1 time &lt; startTime&#10;  then&#10;    @act1 time ≔ startTime&#10;  end&#10;&#10;  event timeAhead2&#10;  where&#10;    @p1 time ≥ startTime&#10;  then&#10;    @act1 time ≔ time + 14 //alle Phasen liegen im Abstand von zwei Wochen&#10;  end&#10;&#10;  event phase1_sendMail&#10;  where&#10;    @p1 time ≤ startTime − 14&#10;  then&#10;    @act1 mailsSent ≔ TRUE&#10;  end&#10;&#10;  event phase1_mailResponses&#10;  any newPar&#10;  where&#10;    @p1 mailsSent = TRUE&#10;    @p2 time &lt; startTime //Unterspezifikation: Diese Bedingung steht nirgendwo!&#10;    @d1 newPar ⊆ allPeople&#10;  then&#10;    @act1 participants ≔  newPar&#10;  end&#10;&#10;  event phase2_discussion_of_principles&#10;  any newPrin newVoteYes newVoteNo newVoteAbstention&#10;  where&#10;    @p1 time = startTime&#10;    @p2 mailsSent = TRUE&#10;    @p3 participants ≠ ∅&#10;    @p4 card(newPrin) ∈ ℕ ∧ newPrin⊆anyPrinciples&#10;    //@p5alt card(newVoteYes) ∈ ℕ ∧ card(newVoteYes) = card(newPrin) ∧ card(newVoteNo) ∈ ℕ ∧ card(newVoteNo) = card(newPrin) ∧ card(newVoteAbstention) ∈ ℕ ∧ card(newVoteAbstention) = card(newPrin)&#10;    @p5 newVoteYes ∈ newPrin → 0‥card(participants) ∧ newVoteNo ∈ newPrin → 0‥card(participants) ∧ newVoteAbstention ∈ newPrin → 0‥card(participants)&#10;        //fuer jeden Grundsatz (principle) wird gespeichert, wie viele Ja/Nein/Enthaltungs-Stimmen es gab&#10;    @p6 ∀x·(x∈newPrin ∧ newVoteYes(x)+newVoteNo(x)+newVoteAbstention(x)=card(participants))&#10;        //die Summe der Ja/Nein/Enthaltungsstimmen pro Grundsatz ist genau die Anzahl der Teilnehmer, Grund: Nichtabstimmung wird als Enthaltung gewertet&#10;  then&#10;    @act1 time ≔ time&#10;    @act2 principles ≔ newPrin&#10;    @act3 principlesVotesYes ≔ newVoteYes&#10;    @act4 principlesVotesNo ≔  newVoteNo&#10;    @act5 principlesVotesAbstention ≔ newVoteAbstention&#10;  end&#10;&#10;  event phase3_create_packages&#10;  any&#10;    newPackage consistent voting&#10;  where&#10;    @p1 time = startTime+14&#10;    @p2 card(principles) &gt; 0&#10;    @p3 newPackage ⊆ principles&#10;    @p4 consistent = {newPackage↦TRUE}&#10;    @p5 voting = {newPackage↦TRUE}&#10;    @p6 choosenPackage = ∅&#10;  then&#10;    @a1 packages ≔ packages ∪ newPackage&#10;  end&#10;&#10;  event phase3_choose_package&#10;  any choosenPack&#10;  where&#10;    @p1 time=startTime+14&#10;    @p2 packages ≠ ∅&#10;    @p3 choosenPack ∈ packages&#10;  then&#10;    @a1 choosenPackage ≔ {choosenPack}&#10;  end&#10;&#10;  event phase4_write_draft&#10;  where&#10;    @p1 time = startTime+14+14&#10;    @p2 packages ≠ ∅&#10;    @p3 choosenPackage ≠ ∅&#10;  then&#10;    @a1 draftWritten ≔ TRUE&#10;  end&#10;&#10;  event phase5_discussion_of_draft&#10;  any&#10;    corrected&#10;  where&#10;    @p1 time = startTime+14+14+28&#10;    @p2 draftWritten = TRUE&#10;    @p3 corrected ∈ BOOL&#10;  then&#10;    @a1 draftCorrectionsMade ≔ corrected&#10;  end&#10;&#10;  event phase6_final_offline_decision&#10;  any&#10;    newDraftAccepted&#10;  where&#10;    @p1 time = startTime+14+14+28+14&#10;    @p2 draftWritten = TRUE&#10;    @p3 newDraftAccepted ∈ BOOL&#10;    @p4 decided = FALSE&#10;  then&#10;    @a1 draftAccepted ≔ newDraftAccepted&#10;    @a2 decided ≔ TRUE&#10;  end&#10;&#10;&#10;&#10;&#10;end&#10;" version="5">
+<org.eventb.core.seesContext name="_F3U0wID7EeKdG5BppL3oGw" org.eventb.core.target="prnp_c1"/>
+<org.eventb.core.variable name="_APNXsYDlEeKdG5BppL3oGw" org.eventb.core.identifier="time"/>
+<org.eventb.core.variable name="_XzuVcYDmEeKdG5BppL3oGw" org.eventb.core.identifier="mailsSent"/>
+<org.eventb.core.variable name="_1w5McYDpEeKdG5BppL3oGw" org.eventb.core.identifier="participants"/>
+<org.eventb.core.variable name="_6bIRgIDqEeKdG5BppL3oGw" org.eventb.core.identifier="principles"/>
+<org.eventb.core.variable name="_HPn2sYD2EeKdG5BppL3oGw" org.eventb.core.identifier="principlesVotesYes"/>
+<org.eventb.core.variable name="_HPn2soD2EeKdG5BppL3oGw" org.eventb.core.identifier="principlesVotesNo"/>
+<org.eventb.core.variable name="_HPn2s4D2EeKdG5BppL3oGw" org.eventb.core.identifier="principlesVotesAbstention"/>
+<org.eventb.core.variable name="_JajyUYD4EeKdG5BppL3oGw" org.eventb.core.identifier="packages"/>
+<org.eventb.core.variable name="_l9_hIYD5EeKdG5BppL3oGw" org.eventb.core.identifier="choosenPackage"/>
+<org.eventb.core.variable name="_IBQyMID6EeKdG5BppL3oGw" org.eventb.core.identifier="draftWritten"/>
+<org.eventb.core.variable name="_biBcEID6EeKdG5BppL3oGw" org.eventb.core.identifier="draftCorrectionsMade"/>
+<org.eventb.core.variable name="_F3U0wYD7EeKdG5BppL3oGw" org.eventb.core.identifier="decided"/>
+<org.eventb.core.variable name="_F3U0woD7EeKdG5BppL3oGw" org.eventb.core.identifier="draftAccepted"/>
+<org.eventb.core.invariant name="_K2CMcIDlEeKdG5BppL3oGw" org.eventb.core.label="inv0" org.eventb.core.predicate="time ∈ ℕ"/>
+<org.eventb.core.invariant name="_XzuVcoDmEeKdG5BppL3oGw" org.eventb.core.label="inv1" org.eventb.core.predicate="mailsSent ∈ BOOL"/>
+<org.eventb.core.invariant name="_1w5McoDpEeKdG5BppL3oGw" org.eventb.core.label="inv2" org.eventb.core.predicate="participants ⊆ allPeople"/>
+<org.eventb.core.invariant name="_6bIRgYDqEeKdG5BppL3oGw" org.eventb.core.label="inv3" org.eventb.core.predicate="principles ⊆ anyPrinciples"/>
+<org.eventb.core.invariant name="_HPodwID2EeKdG5BppL3oGw" org.eventb.core.comment="save results of phase 2" org.eventb.core.label="inv4" org.eventb.core.predicate="principlesVotesYes ∈ anyPrinciples ⇸ ℕ"/>
+<org.eventb.core.invariant name="_HPodwYD2EeKdG5BppL3oGw" org.eventb.core.label="inv5" org.eventb.core.predicate="principlesVotesNo  ∈ anyPrinciples ⇸ ℕ"/>
+<org.eventb.core.invariant name="_HPodwoD2EeKdG5BppL3oGw" org.eventb.core.label="inv6" org.eventb.core.predicate="principlesVotesAbstention ∈ anyPrinciples ⇸ ℕ"/>
+<org.eventb.core.invariant name="_JakZYID4EeKdG5BppL3oGw" org.eventb.core.label="inv7" org.eventb.core.predicate="packages ∈ ℙ(principles)"/>
+<org.eventb.core.invariant name="_l-AIMID5EeKdG5BppL3oGw" org.eventb.core.label="inv8" org.eventb.core.predicate="choosenPackage ∈ ℙ(packages) ∧ card(choosenPackage)∈0‥1"/>
+<org.eventb.core.invariant name="_IBRZQID6EeKdG5BppL3oGw" org.eventb.core.label="inv9" org.eventb.core.predicate="draftWritten ∈ BOOL"/>
+<org.eventb.core.invariant name="_biCDIID6EeKdG5BppL3oGw" org.eventb.core.label="inv10" org.eventb.core.predicate="draftCorrectionsMade ∈ BOOL"/>
+<org.eventb.core.invariant name="_F3WC4ID7EeKdG5BppL3oGw" org.eventb.core.label="inv11" org.eventb.core.predicate="decided ∈ BOOL"/>
+<org.eventb.core.invariant name="_F3WC4YD7EeKdG5BppL3oGw" org.eventb.core.label="inv12" org.eventb.core.predicate="draftAccepted ∈ BOOL"/>
+<org.eventb.core.invariant name="_PtmmEIDqEeKdG5BppL3oGw" org.eventb.core.label="i1" org.eventb.core.predicate="(participants ≠ ∅) ⇒ (mailsSent = TRUE)"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="_Xzu8gIDmEeKdG5BppL3oGw" org.eventb.core.assignment="time ≔ 0" org.eventb.core.label="act0"/>
+<org.eventb.core.action name="_K2CzgIDlEeKdG5BppL3oGw" org.eventb.core.assignment="mailsSent ≔ FALSE" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_1w5zgIDpEeKdG5BppL3oGw" org.eventb.core.assignment="participants ≔  ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_6bI4kIDqEeKdG5BppL3oGw" org.eventb.core.assignment="principles ≔  ∅" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_HPodw4D2EeKdG5BppL3oGw" org.eventb.core.assignment="principlesVotesYes ≔ ∅" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_HPodxID2EeKdG5BppL3oGw" org.eventb.core.assignment="principlesVotesNo ≔ ∅" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_HPodxYD2EeKdG5BppL3oGw" org.eventb.core.assignment="principlesVotesAbstention ≔ ∅" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="_JakZYYD4EeKdG5BppL3oGw" org.eventb.core.assignment="packages ≔ ∅" org.eventb.core.label="inv7"/>
+<org.eventb.core.action name="_l-AvQID5EeKdG5BppL3oGw" org.eventb.core.assignment="choosenPackage ≔  ∅" org.eventb.core.comment="eigentlich sollte choosenPackage erst am Ende von Phase 3 eingefuehrt werden" org.eventb.core.label="inv8"/>
+<org.eventb.core.action name="_IBRZQYD6EeKdG5BppL3oGw" org.eventb.core.assignment="draftWritten ≔ FALSE" org.eventb.core.label="inv9"/>
+<org.eventb.core.action name="_biCDIYD6EeKdG5BppL3oGw" org.eventb.core.assignment="draftCorrectionsMade ≔ FALSE" org.eventb.core.label="inv10"/>
+<org.eventb.core.action name="_F3Wp8ID7EeKdG5BppL3oGw" org.eventb.core.assignment="decided ≔ FALSE" org.eventb.core.label="inv11"/>
+<org.eventb.core.action name="_F3Wp8YD7EeKdG5BppL3oGw" org.eventb.core.assignment="draftAccepted ≔ FALSE" org.eventb.core.label="inv12"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_yYRnoIDlEeKdG5BppL3oGw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="timeAhead1">
+<org.eventb.core.guard name="_yYRnoYDlEeKdG5BppL3oGw" org.eventb.core.label="p1" org.eventb.core.predicate="time &lt; startTime"/>
+<org.eventb.core.action name="_yYRnooDlEeKdG5BppL3oGw" org.eventb.core.assignment="time ≔ startTime" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_yYRno4DlEeKdG5BppL3oGw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="timeAhead2">
+<org.eventb.core.guard name="_yYRnpIDlEeKdG5BppL3oGw" org.eventb.core.label="p1" org.eventb.core.predicate="time ≥ startTime"/>
+<org.eventb.core.action name="_yYSOsIDlEeKdG5BppL3oGw" org.eventb.core.assignment="time ≔ time + 14" org.eventb.core.comment="alle Phasen liegen im Abstand von zwei Wochen" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_XzvjkIDmEeKdG5BppL3oGw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="phase1_sendMail">
+<org.eventb.core.guard name="_XzvjkYDmEeKdG5BppL3oGw" org.eventb.core.label="p1" org.eventb.core.predicate="time ≤ startTime − 14"/>
+<org.eventb.core.action name="_XzvjkoDmEeKdG5BppL3oGw" org.eventb.core.assignment="mailsSent ≔ TRUE" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_1w6akIDpEeKdG5BppL3oGw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="phase1_mailResponses">
+<org.eventb.core.parameter name="_1w6akYDpEeKdG5BppL3oGw" org.eventb.core.identifier="newPar"/>
+<org.eventb.core.guard name="_1w7BoIDpEeKdG5BppL3oGw" org.eventb.core.label="p1" org.eventb.core.predicate="mailsSent = TRUE"/>
+<org.eventb.core.guard name="_1w7BoYDpEeKdG5BppL3oGw" org.eventb.core.comment="Unterspezifikation: Diese Bedingung steht nirgendwo!" org.eventb.core.label="p2" org.eventb.core.predicate="time &lt; startTime"/>
+<org.eventb.core.guard name="_1w7BooDpEeKdG5BppL3oGw" org.eventb.core.label="d1" org.eventb.core.predicate="newPar ⊆ allPeople"/>
+<org.eventb.core.action name="_1w7Bo4DpEeKdG5BppL3oGw" org.eventb.core.assignment="participants ≔  newPar" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_1w7BpIDpEeKdG5BppL3oGw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="phase2_discussion_of_principles">
+<org.eventb.core.parameter name="_r7BBkIDrEeKdG5BppL3oGw" org.eventb.core.identifier="newPrin"/>
+<org.eventb.core.parameter name="_kwmakIDxEeKdG5BppL3oGw" org.eventb.core.identifier="newVoteYes"/>
+<org.eventb.core.parameter name="_kwnBoIDxEeKdG5BppL3oGw" org.eventb.core.identifier="newVoteNo"/>
+<org.eventb.core.parameter name="_kwnBoYDxEeKdG5BppL3oGw" org.eventb.core.identifier="newVoteAbstention"/>
+<org.eventb.core.guard name="_1w7BpYDpEeKdG5BppL3oGw" org.eventb.core.label="p1" org.eventb.core.predicate="time = startTime"/>
+<org.eventb.core.guard name="_1w7osIDpEeKdG5BppL3oGw" org.eventb.core.label="p2" org.eventb.core.predicate="mailsSent = TRUE"/>
+<org.eventb.core.guard name="_1w7osYDpEeKdG5BppL3oGw" org.eventb.core.label="p3" org.eventb.core.predicate="participants ≠ ∅"/>
+<org.eventb.core.guard name="_q75G4IDrEeKdG5BppL3oGw" org.eventb.core.comment="@p5alt card(newVoteYes) ∈ ℕ ∧ card(newVoteYes) = card(newPrin) ∧ card(newVoteNo) ∈ ℕ ∧ card(newVoteNo) = card(newPrin) ∧ card(newVoteAbstention) ∈ ℕ ∧ card(newVoteAbstention) = card(newPrin)" org.eventb.core.label="p4" org.eventb.core.predicate="card(newPrin) ∈ ℕ ∧ newPrin⊆anyPrinciples"/>
+<org.eventb.core.guard name="_KPGcYIDyEeKdG5BppL3oGw" org.eventb.core.comment="fuer jeden Grundsatz (principle) wird gespeichert, wie viele Ja/Nein/Enthaltungs-Stimmen es gab" org.eventb.core.label="p5" org.eventb.core.predicate="newVoteYes ∈ newPrin → 0‥card(participants) ∧ newVoteNo ∈ newPrin → 0‥card(participants) ∧ newVoteAbstention ∈ newPrin → 0‥card(participants)"/>
+<org.eventb.core.guard name="_o-4uAIDzEeKdG5BppL3oGw" org.eventb.core.comment="die Summe der Ja/Nein/Enthaltungsstimmen pro Grundsatz ist genau die Anzahl der Teilnehmer, Grund: Nichtabstimmung wird als Enthaltung gewertet" org.eventb.core.label="p6" org.eventb.core.predicate="∀x·(x∈newPrin ∧ newVoteYes(x)+newVoteNo(x)+newVoteAbstention(x)=card(participants))"/>
+<org.eventb.core.action name="_1w7osoDpEeKdG5BppL3oGw" org.eventb.core.assignment="time ≔ time" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_q75G4YDrEeKdG5BppL3oGw" org.eventb.core.assignment="principles ≔ newPrin" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_HPpr4ID2EeKdG5BppL3oGw" org.eventb.core.assignment="principlesVotesYes ≔ newVoteYes" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_HPpr4YD2EeKdG5BppL3oGw" org.eventb.core.assignment="principlesVotesNo ≔  newVoteNo" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_HPqS8ID2EeKdG5BppL3oGw" org.eventb.core.assignment="principlesVotesAbstention ≔ newVoteAbstention" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_l-B9YID5EeKdG5BppL3oGw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="phase3_create_packages">
+<org.eventb.core.parameter name="_l-B9YYD5EeKdG5BppL3oGw" org.eventb.core.identifier="newPackage"/>
+<org.eventb.core.parameter name="_l-B9YoD5EeKdG5BppL3oGw" org.eventb.core.identifier="consistent"/>
+<org.eventb.core.parameter name="_l-B9Y4D5EeKdG5BppL3oGw" org.eventb.core.identifier="voting"/>
+<org.eventb.core.guard name="_l-B9ZID5EeKdG5BppL3oGw" org.eventb.core.label="p1" org.eventb.core.predicate="time = startTime+14"/>
+<org.eventb.core.guard name="_l-B9ZYD5EeKdG5BppL3oGw" org.eventb.core.label="p2" org.eventb.core.predicate="card(principles) &gt; 0"/>
+<org.eventb.core.guard name="_l-CkcID5EeKdG5BppL3oGw" org.eventb.core.label="p3" org.eventb.core.predicate="newPackage ⊆ principles"/>
+<org.eventb.core.guard name="_l-CkcYD5EeKdG5BppL3oGw" org.eventb.core.label="p4" org.eventb.core.predicate="consistent = {newPackage↦TRUE}"/>
+<org.eventb.core.guard name="_l-CkcoD5EeKdG5BppL3oGw" org.eventb.core.label="p5" org.eventb.core.predicate="voting = {newPackage↦TRUE}"/>
+<org.eventb.core.guard name="_rE8z4ID5EeKdG5BppL3oGw" org.eventb.core.label="p6" org.eventb.core.predicate="choosenPackage = ∅"/>
+<org.eventb.core.action name="_l-Ckc4D5EeKdG5BppL3oGw" org.eventb.core.assignment="packages ≔ packages ∪ newPackage" org.eventb.core.label="a1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_l-CkdID5EeKdG5BppL3oGw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="phase3_choose_package">
+<org.eventb.core.parameter name="_l-CkdYD5EeKdG5BppL3oGw" org.eventb.core.identifier="choosenPack"/>
+<org.eventb.core.guard name="_l-CkdoD5EeKdG5BppL3oGw" org.eventb.core.label="p1" org.eventb.core.predicate="time=startTime+14"/>
+<org.eventb.core.guard name="_l-Ckd4D5EeKdG5BppL3oGw" org.eventb.core.label="p2" org.eventb.core.predicate="packages ≠ ∅"/>
+<org.eventb.core.guard name="_l-CkeID5EeKdG5BppL3oGw" org.eventb.core.label="p3" org.eventb.core.predicate="choosenPack ∈ packages"/>
+<org.eventb.core.action name="_l-CkeYD5EeKdG5BppL3oGw" org.eventb.core.assignment="choosenPackage ≔ {choosenPack}" org.eventb.core.label="a1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_K64qsID6EeKdG5BppL3oGw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="phase4_write_draft">
+<org.eventb.core.guard name="_K64qsYD6EeKdG5BppL3oGw" org.eventb.core.label="p1" org.eventb.core.predicate="time = startTime+14+14"/>
+<org.eventb.core.guard name="_K64qsoD6EeKdG5BppL3oGw" org.eventb.core.label="p2" org.eventb.core.predicate="packages ≠ ∅"/>
+<org.eventb.core.guard name="_K64qs4D6EeKdG5BppL3oGw" org.eventb.core.label="p3" org.eventb.core.predicate="choosenPackage ≠ ∅"/>
+<org.eventb.core.action name="_K64qtID6EeKdG5BppL3oGw" org.eventb.core.assignment="draftWritten ≔ TRUE" org.eventb.core.label="a1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_biEfYID6EeKdG5BppL3oGw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="phase5_discussion_of_draft">
+<org.eventb.core.parameter name="_biEfYYD6EeKdG5BppL3oGw" org.eventb.core.identifier="corrected"/>
+<org.eventb.core.guard name="_biEfYoD6EeKdG5BppL3oGw" org.eventb.core.label="p1" org.eventb.core.predicate="time = startTime+14+14+28"/>
+<org.eventb.core.guard name="_biEfY4D6EeKdG5BppL3oGw" org.eventb.core.label="p2" org.eventb.core.predicate="draftWritten = TRUE"/>
+<org.eventb.core.guard name="_biEfZID6EeKdG5BppL3oGw" org.eventb.core.label="p3" org.eventb.core.predicate="corrected ∈ BOOL"/>
+<org.eventb.core.action name="_biEfZYD6EeKdG5BppL3oGw" org.eventb.core.assignment="draftCorrectionsMade ≔ corrected" org.eventb.core.label="a1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_F3ZGMID7EeKdG5BppL3oGw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="phase6_final_offline_decision">
+<org.eventb.core.parameter name="_F3ZGMYD7EeKdG5BppL3oGw" org.eventb.core.identifier="newDraftAccepted"/>
+<org.eventb.core.guard name="_F3ZGMoD7EeKdG5BppL3oGw" org.eventb.core.label="p1" org.eventb.core.predicate="time = startTime+14+14+28+14"/>
+<org.eventb.core.guard name="_F3ZGM4D7EeKdG5BppL3oGw" org.eventb.core.label="p2" org.eventb.core.predicate="draftWritten = TRUE"/>
+<org.eventb.core.guard name="_F3ZGNID7EeKdG5BppL3oGw" org.eventb.core.label="p3" org.eventb.core.predicate="newDraftAccepted ∈ BOOL"/>
+<org.eventb.core.guard name="_F3ZGNYD7EeKdG5BppL3oGw" org.eventb.core.label="p4" org.eventb.core.predicate="decided = FALSE"/>
+<org.eventb.core.action name="_F3ZGNoD7EeKdG5BppL3oGw" org.eventb.core.assignment="draftAccepted ≔ newDraftAccepted" org.eventb.core.label="a1"/>
+<org.eventb.core.action name="_F3ZGN4D7EeKdG5BppL3oGw" org.eventb.core.assignment="decided ≔ TRUE" org.eventb.core.label="a2"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

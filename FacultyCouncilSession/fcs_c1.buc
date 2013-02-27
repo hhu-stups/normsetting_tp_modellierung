@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1351865411144" org.eventb.texttools.text_representation="context fcs_c1&#10;&#10;constants dekanChairperson p_dekanChairperson&#10;          T1 T2 T3 T4 T5 T6 T7 T8 S1 S2 S3 RE1 RE2 E1 E2&#10;          initialAgenda&#10;&#10;&#10;sets councilMembers professors students researchers employees votingCouncilMembers nonvotingCouncilMembers&#10;     replacementMembers&#10;&#10;&#10;&#10;axioms&#10;  @axm1 partition(nonvotingCouncilMembers, {dekanChairperson}, {p_dekanChairperson}) //§11(5)Zeile7 GrO&#10;  /*@axm2 partition(votingCouncilMembers, {T1}, {T2}, {T3}, {T4}, {T5}, {T6}, {T7}, {T8},&#10;                                        {S1}, {S2}, {S3}, {RE1}, {RE2}, {E1}, {E2}) // §11(5) GrO*/&#10;  @axm3 partition(professors, {T1}, {T2}, {T3}, {T4}, {T5}, {T6}, {T7}, {T8})&#10;  @axm4 partition(students, {S1}, {S2}, {S3})&#10;  @axm5 partition(researchers, {RE1}, {RE2})&#10;  @axm6 partition(employees, {E1}, {E2})&#10;  @axm7 initialAgenda ∈ ℕ1&#10;&#10;end&#10;" version="3">
+<org.eventb.core.carrierSet name="_zWBQgBkiEeKbedzoGdeyVQ" org.eventb.core.identifier="councilMembers"/>
+<org.eventb.core.carrierSet name="_WhikEBkYEeKLjPbx6ei19w" org.eventb.core.identifier="professors"/>
+<org.eventb.core.carrierSet name="_aNDzkBkYEeKLjPbx6ei19w" org.eventb.core.identifier="students"/>
+<org.eventb.core.carrierSet name="_lY5Z4BkYEeKLjPbx6ei19w" org.eventb.core.identifier="researchers"/>
+<org.eventb.core.carrierSet name="_vHAd8BkYEeKLjPbx6ei19w" org.eventb.core.identifier="employees"/>
+<org.eventb.core.carrierSet name="_bQDsMBkZEeKLjPbx6ei19w" org.eventb.core.identifier="votingCouncilMembers"/>
+<org.eventb.core.carrierSet name="_pUbl4BkZEeKLjPbx6ei19w" org.eventb.core.identifier="nonvotingCouncilMembers"/>
+<org.eventb.core.carrierSet name="_AAe1IBkcEeKLjPbx6ei19w" org.eventb.core.identifier="replacementMembers"/>
+<org.eventb.core.constant name="_QVtCABkaEeKLjPbx6ei19w" org.eventb.core.identifier="dekanChairperson"/>
+<org.eventb.core.constant name="_YOT9ABkaEeKLjPbx6ei19w" org.eventb.core.identifier="p_dekanChairperson"/>
+<org.eventb.core.constant name="_2xzS8CTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="T1"/>
+<org.eventb.core.constant name="_2x0hECTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="T2"/>
+<org.eventb.core.constant name="_2x2WQCTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="T3"/>
+<org.eventb.core.constant name="_2x3kYCTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="T4"/>
+<org.eventb.core.constant name="_2x4ygCTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="T5"/>
+<org.eventb.core.constant name="_2x6AoCTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="T6"/>
+<org.eventb.core.constant name="_2x710CTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="T7"/>
+<org.eventb.core.constant name="_2x9D8CTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="T8"/>
+<org.eventb.core.constant name="_2x-SECTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="S1"/>
+<org.eventb.core.constant name="_2yAHQCTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="S2"/>
+<org.eventb.core.constant name="_2yBVYCTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="S3"/>
+<org.eventb.core.constant name="_2yDKkCTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="RE1"/>
+<org.eventb.core.constant name="_2yEYsCTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="RE2"/>
+<org.eventb.core.constant name="_2yGN4CTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="E1"/>
+<org.eventb.core.constant name="_2yHcACTrEeKSjJuHpGd9gQ" org.eventb.core.identifier="E2"/>
+<org.eventb.core.constant name="_Z0xUMCTxEeKSjJuHpGd9gQ" org.eventb.core.identifier="initialAgenda"/>
+<org.eventb.core.axiom name="_QVtpEBkaEeKLjPbx6ei19w" org.eventb.core.comment="§11(5)Zeile7 GrO&#10;@axm2 partition(votingCouncilMembers, {T1}, {T2}, {T3}, {T4}, {T5}, {T6}, {T7}, {T8},&#10;                                        {S1}, {S2}, {S3}, {RE1}, {RE2}, {E1}, {E2}) // §11(5) GrO" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(nonvotingCouncilMembers, {dekanChairperson}, {p_dekanChairperson})"/>
+<org.eventb.core.axiom name="_PNT_kCTsEeKSjJuHpGd9gQ" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(professors, {T1}, {T2}, {T3}, {T4}, {T5}, {T6}, {T7}, {T8})"/>
+<org.eventb.core.axiom name="_PNUmoCTsEeKSjJuHpGd9gQ" org.eventb.core.label="axm4" org.eventb.core.predicate="partition(students, {S1}, {S2}, {S3})"/>
+<org.eventb.core.axiom name="_PNV0wCTsEeKSjJuHpGd9gQ" org.eventb.core.label="axm5" org.eventb.core.predicate="partition(researchers, {RE1}, {RE2})"/>
+<org.eventb.core.axiom name="_PNXC4CTsEeKSjJuHpGd9gQ" org.eventb.core.label="axm6" org.eventb.core.predicate="partition(employees, {E1}, {E2})"/>
+<org.eventb.core.axiom name="_Z0zJYCTxEeKSjJuHpGd9gQ" org.eventb.core.label="axm7" org.eventb.core.predicate="initialAgenda ∈ ℕ1"/>
+</org.eventb.core.contextFile>

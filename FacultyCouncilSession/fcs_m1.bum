@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1361982793212" org.eventb.texttools.text_representation="machine fcs_m1&#10; sees fcs_c1&#10;&#10;variables&#10;  guests /*present at council session*/&#10;  comissionMembers scientificInstitutionManagers otherGuests&#10;  agenda&#10;  postponed&#10;  completed&#10;  presentVotingMembers&#10;  councilCanDecide&#10;  break&#10;  initialCheck&#10;  dekanPresent&#10;  closed&#10;  votingResults&#10;&#10;  /*&#10;     Annahmen:&#10;       * Die Sitzung laeuft bereits (keine Einladungen verschicken usw.)&#10;       * Dekan usw. sind bereits gewaehlt&#10; */&#10;&#10;&#10;invariants&#10;  @inv12 ((card(nonvotingCouncilMembers) = 2) ∨ (card(nonvotingCouncilMembers) = 3))  //3, falls Studiendekan gewaehlt (hier: A. Goerlitz)&#10;  //@inv11 card(councilMembers) = card(nonvotingCouncilMembers) + card(votingCouncilMembers) + card(replacementMembers)&#10;  //@inv13 card(votingCouncilMembers) = 15&#10;  @inv20 card(professors) = 8&#10;  @inv30 card(students) = 3&#10;  @inv40 card(researchers) = 2&#10;  @inv50 card(employees) = 2&#10;&#10;  @iiii1 comissionMembers ∈ ℕ&#10;  @iiii2 scientificInstitutionManagers ∈ ℕ&#10;  @iiii3 otherGuests ∈ ℕ //Senatsmitglieder, 1 Vertreter akadem. Mitarbeiter, 1 Vertreter der Studenten, sonstige Hochschullehrer, Referenten&#10;  @iiii4 guests ∈ ℕ&#10;  @inv60 guests = scientificInstitutionManagers + comissionMembers + otherGuests&#10;&#10;  @inv70 agenda ∈ ℕ //Anzahl existierender Agendaitems (TOPs), NEUE TOPs werden IMMER hinten angefuegt, Reihenfolge der Bearbeitung wird nicht modelliert (hier wie ID)&#10;&#10;  @inv71 postponed ∈ ℙ(ℕ1)&#10;  @inv72 completed ∈ ℙ(ℕ1)&#10;  @inv73 postponed ∩ completed = ∅&#10;  @inv75 closed ∈ BOOL&#10;  @inv76 votingResults ∈ ℕ⇸BOOL&#10;&#10;  @inv80 presentVotingMembers ∈ 0‥card(professors)+card(students)+card(researchers)+card(employees)    // ⊆ votingCouncilMembers&#10;  @inv81 councilCanDecide ∈ BOOL&#10;  @inv82 break ∈ BOOL&#10;  @inv83 initialCheck ∈ BOOL&#10;  @inv84 dekanPresent ∈ BOOL&#10;&#10;&#10;&#10;&#10;&#10;events&#10;  event INITIALISATION&#10;  begin&#10;    @init60a comissionMembers ≔ 0&#10;    @init60b scientificInstitutionManagers ≔ 0&#10;    @init60c otherGuests ≔ 0&#10;    @init60d guests ≔ 0&#10;    @init70  agenda ≔ initialAgenda&#10;    @init71  postponed ≔ ∅&#10;    @inv72   completed ≔ ∅&#10;    @inv75   closed ≔ FALSE&#10;    @inv76   votingResults ≔  ∅&#10;    @inv80   presentVotingMembers ≔ 15&#10;    @inv81   councilCanDecide ≔ FALSE //muss zunaechst geprueft werden&#10;    @inv82   break ≔ FALSE&#10;    @inv83   initialCheck ≔ TRUE&#10;    @inv84   dekanPresent ≔ TRUE  // :∈ BOOL&#10;/*&#10;  event setGuests&#10;  any n&#10;  where @inv1 n∈scientificInstitutionManagers ∪ comissionMembers ∪ otherGuests&#10;  then&#10;    @act1 guests ≔ n&#10;  end&#10;*/&#10;  end&#10;&#10;  event newAgendaItem&#10;  any resultYes resultNo resAbstention&#10;  where&#10;     @inv0 closed=FALSE ∧ councilCanDecide = TRUE&#10;     @inv2 resultYes ∈ 0‥presentVotingMembers&#10;     @inv3 resultNo ∈ 0‥presentVotingMembers&#10;     @inv4 resAbstention ∈ 0‥ presentVotingMembers&#10;     //@inv4b resAbstention = card(presentVotingMembers) − resultYes − resultNo&#10;     @inv5 resultYes + resultNo + resAbstention = presentVotingMembers&#10;     @inv6 resultYes &gt; resultNo //einfache Mehrheit modelliert §8(3) GeschOFakRat //TODO: hier Annahme kein Widerspruch gem. §8(3)&#10;  then&#10;     @act1 agenda ≔ agenda + 1&#10;  end&#10;&#10;&#10;&#10;  event checkDecisionPossible // §10(1) GeschO&#10;  any res&#10;  where&#10;    @inv0 closed=FALSE&#10;    @inv1 res ∈ BOOL&#10;    @inv2 (presentVotingMembers &gt; ((card(professors)+card(students)+card(researchers)+card(employees))÷2)) ⇔ (res=TRUE) //gem. §11(2) GrO, aber: §10(1) GeschOFak: von der Promotionsordnung sind alle Gruppen betroffen (abw. von GeschO §7(1))&#10;    /*Beschlussfaehigkeit bei mind. 8 Leuten, da fixe Zahl von 15 Mitgliedern. Hier aber als card(...) div 2 geloest, damit Kompatibilitaet bei Aenderung der Mitgliederzahl gegeben ist*/&#10;    @inv3 ((break = TRUE) ∨ (initialCheck = TRUE) ∨ (dekanPresent = TRUE))&#10;  then&#10;    @act1 councilCanDecide ≔ res&#10;    @act2 initialCheck ≔ FALSE&#10;  end&#10;&#10;&#10;  event memberEnter&#10;  where&#10;    @inv1 presentVotingMembers &lt; card(professors)+card(students)+card(researchers)+card(employees)&#10;  then&#10;    @act1 presentVotingMembers ≔  presentVotingMembers+1&#10;  end&#10;&#10;  event memberLeaves&#10;  where&#10;    @inv1 presentVotingMembers &gt;0&#10;  then&#10;    @act1 presentVotingMembers ≔  presentVotingMembers−1&#10;  end&#10;&#10;  event dekanEnters&#10;  where&#10;    @inv1 dekanPresent = FALSE&#10;  then&#10;    @act1 dekanPresent ≔ TRUE&#10;  end&#10;&#10;  event dekanLeaves&#10;  where&#10;    @inv1 dekanPresent = TRUE&#10;  then&#10;    @act1 dekanPresent ≔ FALSE&#10;  end&#10;&#10;&#10;  event postponedAgendaitem // §11 GeschO&#10;  any item&#10;  where&#10;        @inv0 closed=FALSE ∧ councilCanDecide = TRUE&#10;        @grd1 item ∈ 1‥agenda&#10;        @grd2 dekanPresent = TRUE&#10;        @grd3 item ∉ completed ∧ item ∉ postponed&#10;  begin&#10;    @act1 postponed ≔  postponed ∪ {item}&#10;  end&#10;&#10;  event completeAgendaitem //TOP behandelt&#10;  any item res resultYes resultNo resAbstention //Abstention=Enthaltung&#10;  where&#10;        @inv0 closed=FALSE ∧ councilCanDecide = TRUE&#10;        @grd1 item = card(completed∪postponed)+1 ∧ item≤agenda   //1‥agenda&#10;        @grd2 dekanPresent = TRUE&#10;        @grd3 item ∉ postponed ∧ item ∉ completed&#10;     @inv2 resultYes ∈ 0‥presentVotingMembers&#10;     @inv3 resultNo ∈ 0‥presentVotingMembers&#10;     @inv4 resAbstention ∈ 0‥ presentVotingMembers&#10;     //@inv4b resAbstention = card(presentVotingMembers) − resultYes − resultNo&#10;     @inv5 resultYes + resultNo + resAbstention = presentVotingMembers&#10;     //@inv6 resultYes &gt; resultNo //einfache Mehrheit modelliert §8(3) GeschOFakRat //TODO: hier Annahme kein Widerspruch gem. §8(3)&#10;     @inv7 res = TRUE ⇔ resultYes &gt; resultNo //relative Mehrheit&#10;  begin&#10;    @act1 completed ≔ completed ∪ {item}&#10;    @act2 votingResults ≔ votingResults ∪ {item↦res}&#10;  end&#10;&#10;  event closeSession&#10;  where&#10;        @inv0 closed=FALSE&#10;        @grd ((card(completed)+card(postponed) = agenda) ∨ (councilCanDecide=FALSE ∧ initialCheck = FALSE))&#10;  then&#10;    @act1 closed ≔ TRUE&#10;  end&#10;&#10;&#10;&#10;&#10;end&#10;" version="5">
+<org.eventb.core.seesContext name="_Ya3ocID7EeKdG5BppL3oGw" org.eventb.core.target="fcs_c1"/>
+<org.eventb.core.variable name="_Q_tg8RkdEeKLjPbx6ei19w" org.eventb.core.comment="present at council session" org.eventb.core.identifier="guests"/>
+<org.eventb.core.variable name="_J6rbIBkhEeKbedzoGdeyVQ" org.eventb.core.identifier="comissionMembers"/>
+<org.eventb.core.variable name="_J6rbIRkhEeKbedzoGdeyVQ" org.eventb.core.identifier="scientificInstitutionManagers"/>
+<org.eventb.core.variable name="_J6sCMBkhEeKbedzoGdeyVQ" org.eventb.core.identifier="otherGuests"/>
+<org.eventb.core.variable name="_P1YswBkmEeKbedzoGdeyVQ" org.eventb.core.identifier="agenda"/>
+<org.eventb.core.variable name="_ojrjMCTyEeKSjJuHpGd9gQ" org.eventb.core.identifier="postponed"/>
+<org.eventb.core.variable name="_3f7OICT0EeKSjJuHpGd9gQ" org.eventb.core.identifier="completed"/>
+<org.eventb.core.variable name="_ATvHUBknEeKbedzoGdeyVQ" org.eventb.core.identifier="presentVotingMembers"/>
+<org.eventb.core.variable name="_Hp3gABkqEeKbedzoGdeyVQ" org.eventb.core.identifier="councilCanDecide"/>
+<org.eventb.core.variable name="_v58cIBkrEeKbedzoGdeyVQ" org.eventb.core.identifier="break"/>
+<org.eventb.core.variable name="_v59DMBkrEeKbedzoGdeyVQ" org.eventb.core.identifier="initialCheck"/>
+<org.eventb.core.variable name="_CiXv0BksEeKbedzoGdeyVQ" org.eventb.core.identifier="dekanPresent"/>
+<org.eventb.core.variable name="_3f71MCT0EeKSjJuHpGd9gQ" org.eventb.core.identifier="closed"/>
+<org.eventb.core.variable name="_C8tQwGuREeKUtN9mm1qwOQ" org.eventb.core.comment="&#10;     Annahmen:&#10;       * Die Sitzung laeuft bereits (keine Einladungen verschicken usw.)&#10;       * Dekan usw. sind bereits gewaehlt&#10; " org.eventb.core.identifier="votingResults"/>
+<org.eventb.core.invariant name="_sBm90BkZEeKLjPbx6ei19w" org.eventb.core.comment="3, falls Studiendekan gewaehlt (hier: A. Goerlitz)&#10;@inv11 card(councilMembers) = card(nonvotingCouncilMembers) + card(votingCouncilMembers) + card(replacementMembers)&#10;@inv13 card(votingCouncilMembers) = 15" org.eventb.core.label="inv12" org.eventb.core.predicate="((card(nonvotingCouncilMembers) = 2) ∨ (card(nonvotingCouncilMembers) = 3))"/>
+<org.eventb.core.invariant name="_ZTV9UBkYEeKLjPbx6ei19w" org.eventb.core.label="inv20" org.eventb.core.predicate="card(professors) = 8"/>
+<org.eventb.core.invariant name="_brA_UBkYEeKLjPbx6ei19w" org.eventb.core.label="inv30" org.eventb.core.predicate="card(students) = 3"/>
+<org.eventb.core.invariant name="_nCOIIBkYEeKLjPbx6ei19w" org.eventb.core.label="inv40" org.eventb.core.predicate="card(researchers) = 2"/>
+<org.eventb.core.invariant name="_wf_qIBkYEeKLjPbx6ei19w" org.eventb.core.label="inv50" org.eventb.core.predicate="card(employees) = 2"/>
+<org.eventb.core.invariant name="_f-4uoBkgEeKbedzoGdeyVQ" org.eventb.core.label="iiii1" org.eventb.core.predicate="comissionMembers ∈ ℕ"/>
+<org.eventb.core.invariant name="_f-5VsBkgEeKbedzoGdeyVQ" org.eventb.core.label="iiii2" org.eventb.core.predicate="scientificInstitutionManagers ∈ ℕ"/>
+<org.eventb.core.invariant name="_f-5VsRkgEeKbedzoGdeyVQ" org.eventb.core.comment="Senatsmitglieder, 1 Vertreter akadem. Mitarbeiter, 1 Vertreter der Studenten, sonstige Hochschullehrer, Referenten" org.eventb.core.label="iiii3" org.eventb.core.predicate="otherGuests ∈ ℕ"/>
+<org.eventb.core.invariant name="_qBnX0BkgEeKbedzoGdeyVQ" org.eventb.core.label="iiii4" org.eventb.core.predicate="guests ∈ ℕ"/>
+<org.eventb.core.invariant name="_Q_xLUBkdEeKLjPbx6ei19w" org.eventb.core.label="inv60" org.eventb.core.predicate="guests = scientificInstitutionManagers + comissionMembers + otherGuests"/>
+<org.eventb.core.invariant name="_P1bJABkmEeKbedzoGdeyVQ" org.eventb.core.comment="Anzahl existierender Agendaitems (TOPs), NEUE TOPs werden IMMER hinten angefuegt, Reihenfolge der Bearbeitung wird nicht modelliert (hier wie ID)" org.eventb.core.label="inv70" org.eventb.core.predicate="agenda ∈ ℕ"/>
+<org.eventb.core.invariant name="_gAwKwCTwEeKSjJuHpGd9gQ" org.eventb.core.label="inv71" org.eventb.core.predicate="postponed ∈ ℙ(ℕ1)"/>
+<org.eventb.core.invariant name="_3f-RcCT0EeKSjJuHpGd9gQ" org.eventb.core.label="inv72" org.eventb.core.predicate="completed ∈ ℙ(ℕ1)"/>
+<org.eventb.core.invariant name="_3f-RcST0EeKSjJuHpGd9gQ" org.eventb.core.label="inv73" org.eventb.core.predicate="postponed ∩ completed = ∅"/>
+<org.eventb.core.invariant name="_3f-4gCT0EeKSjJuHpGd9gQ" org.eventb.core.label="inv75" org.eventb.core.predicate="closed ∈ BOOL"/>
+<org.eventb.core.invariant name="_C8vF8GuREeKUtN9mm1qwOQ" org.eventb.core.label="inv76" org.eventb.core.predicate="votingResults ∈ ℕ⇸BOOL"/>
+<org.eventb.core.invariant name="_ATyKoBknEeKbedzoGdeyVQ" org.eventb.core.comment="⊆ votingCouncilMembers" org.eventb.core.label="inv80" org.eventb.core.predicate="presentVotingMembers ∈ 0‥card(professors)+card(students)+card(researchers)+card(employees)"/>
+<org.eventb.core.invariant name="_Hp58QBkqEeKbedzoGdeyVQ" org.eventb.core.label="inv81" org.eventb.core.predicate="councilCanDecide ∈ BOOL"/>
+<org.eventb.core.invariant name="_v6AGgBkrEeKbedzoGdeyVQ" org.eventb.core.label="inv82" org.eventb.core.predicate="break ∈ BOOL"/>
+<org.eventb.core.invariant name="_v6AGgRkrEeKbedzoGdeyVQ" org.eventb.core.label="inv83" org.eventb.core.predicate="initialCheck ∈ BOOL"/>
+<org.eventb.core.invariant name="_CibaMBksEeKbedzoGdeyVQ" org.eventb.core.label="inv84" org.eventb.core.predicate="dekanPresent ∈ BOOL"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="_d7VGABkhEeKbedzoGdeyVQ" org.eventb.core.assignment="comissionMembers ≔ 0" org.eventb.core.label="init60a"/>
+<org.eventb.core.action name="_d7VtEBkhEeKbedzoGdeyVQ" org.eventb.core.assignment="scientificInstitutionManagers ≔ 0" org.eventb.core.label="init60b"/>
+<org.eventb.core.action name="_d7VtERkhEeKbedzoGdeyVQ" org.eventb.core.assignment="otherGuests ≔ 0" org.eventb.core.label="init60c"/>
+<org.eventb.core.action name="_d7VtEhkhEeKbedzoGdeyVQ" org.eventb.core.assignment="guests ≔ 0" org.eventb.core.label="init60d"/>
+<org.eventb.core.action name="_E0-ocBkoEeKbedzoGdeyVQ" org.eventb.core.assignment="agenda ≔ initialAgenda" org.eventb.core.label="init70"/>
+<org.eventb.core.action name="_gAzOECTwEeKSjJuHpGd9gQ" org.eventb.core.assignment="postponed ≔ ∅" org.eventb.core.label="init71"/>
+<org.eventb.core.action name="_3gAtsCT0EeKSjJuHpGd9gQ" org.eventb.core.assignment="completed ≔ ∅" org.eventb.core.label="inv72"/>
+<org.eventb.core.action name="_3gAtsST0EeKSjJuHpGd9gQ" org.eventb.core.assignment="closed ≔ FALSE" org.eventb.core.label="inv75"/>
+<org.eventb.core.action name="_C8vtAGuREeKUtN9mm1qwOQ" org.eventb.core.assignment="votingResults ≔  ∅" org.eventb.core.label="inv76"/>
+<org.eventb.core.action name="_W-S-QBkoEeKbedzoGdeyVQ" org.eventb.core.assignment="presentVotingMembers ≔ 15" org.eventb.core.label="inv80"/>
+<org.eventb.core.action name="_Hp7xcBkqEeKbedzoGdeyVQ" org.eventb.core.assignment="councilCanDecide ≔ FALSE" org.eventb.core.comment="muss zunaechst geprueft werden" org.eventb.core.label="inv81"/>
+<org.eventb.core.action name="_v6B7sBkrEeKbedzoGdeyVQ" org.eventb.core.assignment="break ≔ FALSE" org.eventb.core.label="inv82"/>
+<org.eventb.core.action name="_v6B7sRkrEeKbedzoGdeyVQ" org.eventb.core.assignment="initialCheck ≔ TRUE" org.eventb.core.label="inv83"/>
+<org.eventb.core.action name="_CidPYBksEeKbedzoGdeyVQ" org.eventb.core.assignment="dekanPresent ≔ TRUE" org.eventb.core.comment=":∈ BOOL&#10;&#10;  event setGuests&#10;  any n&#10;  where @inv1 n∈scientificInstitutionManagers ∪ comissionMembers ∪ otherGuests&#10;  then&#10;    @act1 guests ≔ n&#10;  end&#10;" org.eventb.core.label="inv84"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_E0-ocRkoEeKbedzoGdeyVQ" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="newAgendaItem">
+<org.eventb.core.parameter name="_E0_PgBkoEeKbedzoGdeyVQ" org.eventb.core.identifier="resultYes"/>
+<org.eventb.core.parameter name="_E0_PgRkoEeKbedzoGdeyVQ" org.eventb.core.identifier="resultNo"/>
+<org.eventb.core.parameter name="_YuyfMGugEeKm15SvwC8AFg" org.eventb.core.identifier="resAbstention"/>
+<org.eventb.core.guard name="_o3il0BkqEeKbedzoGdeyVQ" org.eventb.core.label="inv0" org.eventb.core.predicate="closed=FALSE ∧ councilCanDecide = TRUE"/>
+<org.eventb.core.guard name="_E0_2khkoEeKbedzoGdeyVQ" org.eventb.core.label="inv2" org.eventb.core.predicate="resultYes ∈ 0‥presentVotingMembers"/>
+<org.eventb.core.guard name="_ix-AoBkoEeKbedzoGdeyVQ" org.eventb.core.label="inv3" org.eventb.core.predicate="resultNo ∈ 0‥presentVotingMembers"/>
+<org.eventb.core.guard name="_E1AdoRkoEeKbedzoGdeyVQ" org.eventb.core.comment="@inv4b resAbstention = card(presentVotingMembers) − resultYes − resultNo" org.eventb.core.label="inv4" org.eventb.core.predicate="resAbstention ∈ 0‥ presentVotingMembers"/>
+<org.eventb.core.guard name="_E1BEsBkoEeKbedzoGdeyVQ" org.eventb.core.label="inv5" org.eventb.core.predicate="resultYes + resultNo + resAbstention = presentVotingMembers"/>
+<org.eventb.core.guard name="_3gDJ8CT0EeKSjJuHpGd9gQ" org.eventb.core.comment="einfache Mehrheit modelliert §8(3) GeschOFakRat //TODO: hier Annahme kein Widerspruch gem. §8(3)" org.eventb.core.label="inv6" org.eventb.core.predicate="resultYes &gt; resultNo"/>
+<org.eventb.core.action name="_E1BEsRkoEeKbedzoGdeyVQ" org.eventb.core.assignment="agenda ≔ agenda + 1" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_Hp8_kBkqEeKbedzoGdeyVQ" org.eventb.core.comment="§10(1) GeschO" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="checkDecisionPossible">
+<org.eventb.core.parameter name="_Hp9moBkqEeKbedzoGdeyVQ" org.eventb.core.identifier="res"/>
+<org.eventb.core.guard name="_3gDxACT0EeKSjJuHpGd9gQ" org.eventb.core.label="inv0" org.eventb.core.predicate="closed=FALSE"/>
+<org.eventb.core.guard name="_Hp9moRkqEeKbedzoGdeyVQ" org.eventb.core.label="inv1" org.eventb.core.predicate="res ∈ BOOL"/>
+<org.eventb.core.guard name="_bGqP4BkqEeKbedzoGdeyVQ" org.eventb.core.comment="gem. §11(2) GrO, aber: §10(1) GeschOFak: von der Promotionsordnung sind alle Gruppen betroffen (abw. von GeschO §7(1))&#10;Beschlussfaehigkeit bei mind. 8 Leuten, da fixe Zahl von 15 Mitgliedern. Hier aber als card(...) div 2 geloest, damit Kompatibilitaet bei Aenderung der Mitgliederzahl gegeben ist" org.eventb.core.label="inv2" org.eventb.core.predicate="(presentVotingMembers &gt; ((card(professors)+card(students)+card(researchers)+card(employees))÷2)) ⇔ (res=TRUE)"/>
+<org.eventb.core.guard name="_bDoUkBkrEeKbedzoGdeyVQ" org.eventb.core.label="inv3" org.eventb.core.predicate="((break = TRUE) ∨ (initialCheck = TRUE) ∨ (dekanPresent = TRUE))"/>
+<org.eventb.core.action name="_Hp9mohkqEeKbedzoGdeyVQ" org.eventb.core.assignment="councilCanDecide ≔ res" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_v6EX8BkrEeKbedzoGdeyVQ" org.eventb.core.assignment="initialCheck ≔ FALSE" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_4hBiwGuVEeKUtN9mm1qwOQ" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="memberEnter">
+<org.eventb.core.guard name="_4hCJ0GuVEeKUtN9mm1qwOQ" org.eventb.core.label="inv1" org.eventb.core.predicate="presentVotingMembers &lt; card(professors)+card(students)+card(researchers)+card(employees)"/>
+<org.eventb.core.action name="_4hCJ0WuVEeKUtN9mm1qwOQ" org.eventb.core.assignment="presentVotingMembers ≔  presentVotingMembers+1" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_4hCJ0muVEeKUtN9mm1qwOQ" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="memberLeaves">
+<org.eventb.core.guard name="_4hCJ02uVEeKUtN9mm1qwOQ" org.eventb.core.label="inv1" org.eventb.core.predicate="presentVotingMembers &gt;0"/>
+<org.eventb.core.action name="_4hCJ1GuVEeKUtN9mm1qwOQ" org.eventb.core.assignment="presentVotingMembers ≔  presentVotingMembers−1" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_32O_oGxhEeK28L3axe50Pg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="dekanEnters">
+<org.eventb.core.guard name="_32QNwGxhEeK28L3axe50Pg" org.eventb.core.label="inv1" org.eventb.core.predicate="dekanPresent = FALSE"/>
+<org.eventb.core.action name="_32QNwWxhEeK28L3axe50Pg" org.eventb.core.assignment="dekanPresent ≔ TRUE" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_32QNwmxhEeK28L3axe50Pg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="dekanLeaves">
+<org.eventb.core.guard name="_32Q00GxhEeK28L3axe50Pg" org.eventb.core.label="inv1" org.eventb.core.predicate="dekanPresent = TRUE"/>
+<org.eventb.core.action name="_32Q00WxhEeK28L3axe50Pg" org.eventb.core.assignment="dekanPresent ≔ FALSE" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_ojzfACTyEeKSjJuHpGd9gQ" org.eventb.core.comment="§11 GeschO" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="postponedAgendaitem">
+<org.eventb.core.parameter name="_ojzfASTyEeKSjJuHpGd9gQ" org.eventb.core.identifier="item"/>
+<org.eventb.core.guard name="_3gE_ICT0EeKSjJuHpGd9gQ" org.eventb.core.label="inv0" org.eventb.core.predicate="closed=FALSE ∧ councilCanDecide = TRUE"/>
+<org.eventb.core.guard name="_oj0GECTyEeKSjJuHpGd9gQ" org.eventb.core.label="grd1" org.eventb.core.predicate="item ∈ 1‥agenda"/>
+<org.eventb.core.guard name="_oj0GESTyEeKSjJuHpGd9gQ" org.eventb.core.label="grd2" org.eventb.core.predicate="dekanPresent = TRUE"/>
+<org.eventb.core.guard name="_3gFmMCT0EeKSjJuHpGd9gQ" org.eventb.core.label="grd3" org.eventb.core.predicate="item ∉ completed ∧ item ∉ postponed"/>
+<org.eventb.core.action name="_oj0GEiTyEeKSjJuHpGd9gQ" org.eventb.core.assignment="postponed ≔  postponed ∪ {item}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_3gFmMST0EeKSjJuHpGd9gQ" org.eventb.core.comment="TOP behandelt" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="completeAgendaitem">
+<org.eventb.core.parameter name="_3gGNQCT0EeKSjJuHpGd9gQ" org.eventb.core.identifier="item"/>
+<org.eventb.core.parameter name="_LLny8GuREeKUtN9mm1qwOQ" org.eventb.core.identifier="res"/>
+<org.eventb.core.parameter name="_Yu5z8GugEeKm15SvwC8AFg" org.eventb.core.identifier="resultYes"/>
+<org.eventb.core.parameter name="_Yu6bAGugEeKm15SvwC8AFg" org.eventb.core.identifier="resultNo"/>
+<org.eventb.core.parameter name="_Yu6bAWugEeKm15SvwC8AFg" org.eventb.core.comment="Abstention=Enthaltung" org.eventb.core.identifier="resAbstention"/>
+<org.eventb.core.guard name="_3gGNQST0EeKSjJuHpGd9gQ" org.eventb.core.label="inv0" org.eventb.core.predicate="closed=FALSE ∧ councilCanDecide = TRUE"/>
+<org.eventb.core.guard name="_3gGNQiT0EeKSjJuHpGd9gQ" org.eventb.core.comment="1‥agenda" org.eventb.core.label="grd1" org.eventb.core.predicate="item = card(completed∪postponed)+1 ∧ item≤agenda"/>
+<org.eventb.core.guard name="_3gG0UCT0EeKSjJuHpGd9gQ" org.eventb.core.label="grd2" org.eventb.core.predicate="dekanPresent = TRUE"/>
+<org.eventb.core.guard name="_3gG0UST0EeKSjJuHpGd9gQ" org.eventb.core.label="grd3" org.eventb.core.predicate="item ∉ postponed ∧ item ∉ completed"/>
+<org.eventb.core.guard name="_Yu7pIGugEeKm15SvwC8AFg" org.eventb.core.label="inv2" org.eventb.core.predicate="resultYes ∈ 0‥presentVotingMembers"/>
+<org.eventb.core.guard name="_Yu7pIWugEeKm15SvwC8AFg" org.eventb.core.label="inv3" org.eventb.core.predicate="resultNo ∈ 0‥presentVotingMembers"/>
+<org.eventb.core.guard name="_Yu8QMGugEeKm15SvwC8AFg" org.eventb.core.comment="@inv4b resAbstention = card(presentVotingMembers) − resultYes − resultNo" org.eventb.core.label="inv4" org.eventb.core.predicate="resAbstention ∈ 0‥ presentVotingMembers"/>
+<org.eventb.core.guard name="_Yu8QMWugEeKm15SvwC8AFg" org.eventb.core.comment="@inv6 resultYes &gt; resultNo //einfache Mehrheit modelliert §8(3) GeschOFakRat //TODO: hier Annahme kein Widerspruch gem. §8(3)" org.eventb.core.label="inv5" org.eventb.core.predicate="resultYes + resultNo + resAbstention = presentVotingMembers"/>
+<org.eventb.core.guard name="_kHTPkGugEeKm15SvwC8AFg" org.eventb.core.comment="relative Mehrheit" org.eventb.core.label="inv7" org.eventb.core.predicate="res = TRUE ⇔ resultYes &gt; resultNo"/>
+<org.eventb.core.action name="_3gG0UiT0EeKSjJuHpGd9gQ" org.eventb.core.assignment="completed ≔ completed ∪ {item}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_LLny8muREeKUtN9mm1qwOQ" org.eventb.core.assignment="votingResults ≔ votingResults ∪ {item↦res}" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_Sc36YGuOEeKUtN9mm1qwOQ" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="closeSession">
+<org.eventb.core.guard name="_Sc5IgGuOEeKUtN9mm1qwOQ" org.eventb.core.label="inv0" org.eventb.core.predicate="closed=FALSE"/>
+<org.eventb.core.guard name="_Sc5IgWuOEeKUtN9mm1qwOQ" org.eventb.core.label="grd" org.eventb.core.predicate="((card(completed)+card(postponed) = agenda) ∨ (councilCanDecide=FALSE ∧ initialCheck = FALSE))"/>
+<org.eventb.core.action name="_Sc5vkGuOEeKUtN9mm1qwOQ" org.eventb.core.assignment="closed ≔ TRUE" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

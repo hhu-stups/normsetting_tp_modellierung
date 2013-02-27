@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="allPeople" org.eventb.core.type="ℙ(allPeople)"/>
+<org.eventb.core.poIdentifier name="anyPrinciples" org.eventb.core.type="ℙ(anyPrinciples)"/>
+<org.eventb.core.poIdentifier name="councilMembers" org.eventb.core.type="ℙ(councilMembers)"/>
+<org.eventb.core.poIdentifier name="deansOfficeEmployees" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="dekanChairperson" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="deputyFacultyMembers" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="employees" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="igradLeader" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="medicalFacultyMembers" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="otherProfessors" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="otherResearchers" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="p_dekanChairperson" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="phdCoordinators" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="phdStudents" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="professors" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="researchers" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="s_dekanChairperson" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="scientificInstitutionManagers" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="senatMembers" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="startTime" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="students" org.eventb.core.type="allPeople"/>
+<org.eventb.core.poIdentifier name="supervisors" org.eventb.core.type="allPeople"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/PhDRegulationsNormsettingProcess/prnp_c1.bpo|org.eventb.core.poFile#prnp_c1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="startTime∈ℕ1∧startTime≥14" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_c1.buc|org.eventb.core.contextFile#prnp_c1|org.eventb.core.axiom#__d52kIDkEeKdG5BppL3oGw"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(allPeople,{dekanChairperson},{p_dekanChairperson},{s_dekanChairperson},{deputyFacultyMembers},{scientificInstitutionManagers},{otherProfessors},{senatMembers},{otherResearchers},{supervisors},{phdStudents},{phdCoordinators},{igradLeader},{medicalFacultyMembers},{deansOfficeEmployees},{professors},{students},{researchers},{employees})" org.eventb.core.source="/PhDRegulationsNormsettingProcess/prnp_c1.buc|org.eventb.core.contextFile#prnp_c1|org.eventb.core.axiom#_sBuAIIDjEeKdG5BppL3oGw"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
